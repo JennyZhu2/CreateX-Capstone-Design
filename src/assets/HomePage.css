@@ -1,0 +1,16 @@
+.featured-tours {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .featured-tours h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  
+  .tours-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  

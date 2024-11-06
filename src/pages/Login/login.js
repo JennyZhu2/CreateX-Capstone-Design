@@ -47,7 +47,7 @@ function Login() {
   };
 
   return (
-    <div className="login">
+    <div className="auth-page">
       <h2>{isLogin ? "Login" : "Create Account"}</h2>
       {error && <p className="error">{error}</p>}
       <form onSubmit={handleSubmit}>
