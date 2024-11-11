@@ -1,6 +1,6 @@
 // src/pages/UserDashboard/UserDashboard.js
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Footer from "../../assets/Footer";
 import "./UserDashboard.css";
 
@@ -18,7 +18,7 @@ function UserDashboard() {
       { id: "2", name: "Sunset Beach Tour" },
     ],
     favoriteTours: [
-      { id: "3", name: "Downtown Exploration" },
+      { id: "3", name: "Downtown Exploration", link: "/map" },
       { id: "4", name: "Cultural Food Tour" },
     ],
     downloadedTours: [
@@ -33,7 +33,7 @@ function UserDashboard() {
   };
 
   return (
-    <>
+    <div>
       <div className="dashboard-container">
         <div className="dashboard-header">
           <h1>User Dashboard</h1>
@@ -69,9 +69,9 @@ function UserDashboard() {
             <h3>Favorite Tours</h3>
             <div className="tours-list">
               {userData.favoriteTours.map((tour) => (
-                <div key={tour.id} className="tour-card">
+                <Link to={tour.link} key={tour.id} className="tour-card">
                   <h4>{tour.name}</h4>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -89,7 +89,7 @@ function UserDashboard() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
 
