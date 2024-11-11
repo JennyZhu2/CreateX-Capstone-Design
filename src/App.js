@@ -8,6 +8,7 @@ import Login from "./pages/Login/login";
 import Signup from "./pages/Signup/Signup";
 import Map from "./pages/Map/map";
 import Dashboard from "./pages/UserDashboard/UserDashboard";
+import Post from "./pages/PostingPage/PostingPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         {/* Add more routes as needed */}
         <Route path="/map" element={<Map />} /> 
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/post" element={<Post />} />
       </Routes>
       <Footer />
     </Router>
