@@ -4,9 +4,9 @@ import React, { useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 const stops = [
-  { name: "Stop 1", mission_name:"Mission 1", text: "Your destination is an art installation hidden between the offices of two banking giants. Hint: let our first president lead the way!", location: { lat: 40.718, lng: -74.012 }, radius: 200 },
-  { name: "Stop 2", mission_name:"Mission 2", text: "Your next destination is a coffee turned vinyl store. Hint: What rhymes with latte?", location: { lat: 40.721, lng: -74.007 }, radius: 100 },
-  { name: "Stop 3", mission_name:"Mission 3", text: "Spend the evening at your last destination: a historic bar in westside Soho. Hint: Why did the chicken cross the road? Cluck", location: { lat: 40.725, lng: -74.002 }, radius: 200 },
+  { name: "Stop 1", text: "Your destination is an art installation hidden between the offices of two banking giants. Hint: let our first president lead the way!", location: { lat: 40.718, lng: -74.012 }, radius: 200 },
+  { name: "Stop 2", text: "Your next destination is a coffee turned vinyl store. Hint: What rhymes with latte?", location: { lat: 40.721, lng: -74.007 }, radius: 100 },
+  { name: "Stop 3", text: "Spend the evening at your last destination: a historic bar in westside Soho. Hint: Why did the chicken cross the road? Cluck", location: { lat: 40.725, lng: -74.002 }, radius: 200 },
 ];
 
 function MapPage() {
@@ -81,11 +81,11 @@ function MapPage() {
     }
   }, []);
 
-
+  // Function to pan the map to a specific stop
   const panToStop = (stop) => {
     if (map) {
       map.panTo(stop.location);
-      map.setZoom(15); 
+      map.setZoom(15); // Adjust zoom level if needed
     }
   };
 
@@ -98,22 +98,7 @@ function MapPage() {
         padding: "15px",
         boxShadow: "2px 0 5px rgba(0, 0, 0, 0.1)",
       }}>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <h3>Tasks</h3>
-          <Link to="/Post">
-            <button style={{
-              padding: "5px 10px",
-              fontSize: "14px",
-              cursor: "pointer",
-              borderRadius: "4px",
-              backgroundColor: "#007bff",
-              color: "#fff",
-              border: "none"
-            }}>
-              Create Scavenger
-            </button>
-          </Link>
-        </div>
+        <h3>Tasks</h3>
         {stops.map((stop, index) => (
           <div key={index} style={{
             marginBottom: "15px",
@@ -126,7 +111,7 @@ function MapPage() {
               style={{ cursor: "pointer", color: "blue" }}
               onClick={() => panToStop(stop)}
             >
-              {stop.mission_name}
+               <Link to={`/post`}>{stop.name}</Link>
             </h4>
             <p>{stop.text}</p>
           </div>
