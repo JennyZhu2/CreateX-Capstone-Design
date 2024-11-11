@@ -6,16 +6,18 @@ import Header from "./assets/Header";
 import Footer from "./assets/Footer";
 import Login from "./pages/Login/login";
 import Signup from "./pages/Signup/Signup";
+import Map from "./pages/Map/map";
 
 function App() {
   return (
     <Router>
-      <Header />
+      <Header /> 
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         {/* Add more routes as needed */}
+        <Route path="/map" element={<Map />} /> 
       </Routes>
       <Footer />
     </Router>
