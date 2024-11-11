@@ -6,7 +6,7 @@ import Header from "./assets/Header";
 import Footer from "./assets/Footer";
 import Login from "./pages/Login/login";
 import Signup from "./pages/Signup/Signup";
-import Dashboard from "./pages/Dashboard/Dashboard";
+import Dashboard from "./pages/UserDashboard/UserDashboard";
 
 function App() {
   return (
