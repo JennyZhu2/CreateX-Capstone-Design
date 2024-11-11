@@ -7,6 +7,7 @@ import Footer from "./assets/Footer";
 import Login from "./pages/Login/login";
 import Signup from "./pages/Signup/Signup";
 import Map from "./pages/Map/map";
+import Dashboard from "./pages/UserDashboard/UserDashboard";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         {/* Add more routes as needed */}
         <Route path="/map" element={<Map />} /> 
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
       <Footer />
     </Router>
