@@ -7,7 +7,7 @@ function PostingPage() {
   return (
     <>
       <div className="posting-container">
-        <h1>Create a Scavenger Hunt</h1>
+        <h1>Post a Scavenger Hunt</h1>
         <form>
           <div className="form-group">
             <label>Hunt Name:</label>
