@@ -1,19 +1,22 @@
 .hero-container {
-    background-image: url('https://example.com/hero-image.jpg'); /* Replace with our image URL */
+    background-image: url('https://wallpapercave.com/wp/wp3594888.jpg'); /* Replace with our image URL */
     background-size: cover;
     background-position: center;
+    max-width: 100%;
     text-align: center;
-    color: #fff;
+    color: #ffffff;
     padding: 100px 20px;
   }
   
   .hero-container h1 {
-    font-size: 48px;
+    background: rgb(0, 0, 0, 0.6);
+    font-size: 72px;
     margin-bottom: 20px;
   }
   
   .hero-container p {
-    font-size: 24px;
+    background: rgb(0, 0, 0, 0.6);
+    font-size: 48px;
     margin-bottom: 40px;
   }
   

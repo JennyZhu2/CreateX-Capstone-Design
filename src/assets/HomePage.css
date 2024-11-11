@@ -1,9 +1,11 @@
 .featured-tours {
+    background: rgba(255, 255, 255, 0);
     padding: 50px 20px;
     text-align: center;
   }
   
   .featured-tours h2 {
+    background: rgba(255, 255, 255, 0);
     font-size: 36px;
     margin-bottom: 40px;
   }

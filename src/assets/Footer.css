@@ -2,6 +2,12 @@
     background-color: #f1f1f1;
     padding: 20px;
     text-align: center;
+    position: absolute;
+    bottom: auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    width: 100vw;
+    max-width: 100%;
   }
   
   .footer-links a {

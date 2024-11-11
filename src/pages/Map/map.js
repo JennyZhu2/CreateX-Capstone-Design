@@ -24,7 +24,7 @@ function MapPage() {
     function initMap() {
       const map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: 40.7128, lng: -74.0060 }, // Initial map center
-        zoom: 12,
+        zoom: 13,
       });
 
       // Add stops and discover neighborhoods for each stop
@@ -84,7 +84,10 @@ function MapPage() {
     }
   }, []);
 
-  return <div id="map" style={{ height: "500px", width: "100%" }}></div>;
+  return <div id="map" style={{ display: "flex", 
+    flexDirection: "column", 
+    height: "100vh", 
+    width: "100%" }}></div>;
 }
 
 export default MapPage;
