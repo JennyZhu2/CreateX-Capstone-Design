@@ -6,7 +6,7 @@ import Header from "./assets/Header";
 import Footer from "./assets/Footer";
 import Login from "./pages/Login/login";
 import Signup from "./pages/Signup/Signup";
-import Map from "./pages/Map/map";
+import MapPage from "./pages/Map/map"; // Update this import
 import Dashboard from "./pages/UserDashboard/UserDashboard";
 import Post from "./pages/PostingPage/PostingPage";
 
@@ -18,8 +18,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        {/* Add more routes as needed */}
-        <Route path="/map" element={<Map />} /> 
+        {/* Update the map route to include a parameter */}
+        <Route path="/map/:tourId" element={<MapPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/post" element={<Post />} />
       </Routes>
