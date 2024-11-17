@@ -1,7 +1,6 @@
-// src/assets/HomePage.js
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import TourCard from './TourCard.js';
+import TourCard from './TourCard';
 import './HomePage.css';
 
 function HomePage() {
@@ -9,14 +8,28 @@ function HomePage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch the list of tours from the JSON file
-    fetch('/data/hunts/hunts.json')
+    // Fetch the index.json file to get the list of tours
+    fetch('public/data/hunts/index.json')
       .then((response) => response.json())
-      .then((data) => {
-        setTours(data);
+      .then((tourSummaries) => {
+        // Fetch each individual tour JSON file
+        Promise.all(
+          tourSummaries.map((tourSummary) =>
+            fetch(tourSummary.jsonFile)
+              .then((response) => response.json())
+              .catch((error) => {
+                console.error(`Failed to fetch ${tourSummary.jsonFile}:`, error);
+                return null; // Return null for failed fetches
+              })
+          )
+        ).then((tourDetails) => {
+          // Filter out any nulls from failed fetches
+          const validTours = tourDetails.filter((tour) => tour !== null);
+          setTours(validTours);
+        });
       })
       .catch((error) => {
-        console.error('Error fetching tours:', error);
+        console.error('Failed to fetch index.json:', error);
       });
   }, []);
 
@@ -26,17 +39,19 @@ function HomePage() {
 
   return (
     <div className="home-page">
-      <h1>Available Tours</h1>
-
+      {/* Search Bar */}
       <div className="search-container">
         <input
           type="text"
-          placeholder="Enter a city or zip code"
+          placeholder="Search tours by city or zip code"
           className="search-bar"
         />
       </div>
 
-      <div className="tour-list">
+      <h1>Available Tours</h1>
+
+      {/* Tour Grid */}
+      <div className="tour-grid">
         {tours.length > 0 ? (
           tours.map((tour) => (
             <TourCard
@@ -44,9 +59,8 @@ function HomePage() {
               tour={{
                 ID: tour.huntId,
                 name: tour.title,
-                location: "Unknown Location", // You can update this if the data has a location field
-                cost: 0, // You can update this if the data has a cost field
-                imageUrl: `/data/hunts/${tour.image}`,
+                shortDescription: tour.shortDescription,
+                imageUrl: tour.image,
               }}
               onClick={() => handleTourClick(tour.huntId)}
             />

@@ -1,0 +1,53 @@
+{
+    "huntId": "hunt002",
+    "title": "Piedmont Park Explorer",
+    "shortDescription": "Discover the best spots in Piedmont Park with this exciting scavenger hunt!",
+    "image": "./images/park.jpg",
+    "fullDescription": "This scavenger hunt will take you through the beautiful Piedmont Park, exploring scenic locations, historic monuments, and popular local spots. Perfect for a fun day out in Atlanta!",
+    "coordinates": {
+      "lat": 33.7851,
+      "lng": -84.3738
+    },
+    "missions": [
+      {
+        "step": 1,
+        "title": "The Legacy Fountain",
+        "shortDescription": "Start your adventure at the iconic Legacy Fountain.",
+        "hint": "Hint: Find the fountain that features colorful water displays during the summer.",
+        "coordinates": {
+          "lat": 33.7858,
+          "lng": -84.3731
+        }
+      },
+      {
+        "step": 2,
+        "title": "The Meadow",
+        "shortDescription": "Head to the large open meadow, a popular spot for picnics and events.",
+        "hint": "Hint: Look for the area where people often gather to play frisbee or have a picnic.",
+        "coordinates": {
+          "lat": 33.7845,
+          "lng": -84.3709
+        }
+      },
+      {
+        "step": 3,
+        "title": "Park Tavern",
+        "shortDescription": "Visit the historic Park Tavern located near the edge of the park.",
+        "hint": "Hint: This spot offers great views of the Midtown skyline and is known for its beer garden.",
+        "coordinates": {
+          "lat": 33.7825,
+          "lng": -84.3687
+        }
+      },
+      {
+        "step": 4,
+        "title": "Lake Clara Meer",
+        "shortDescription": "End your hunt with a peaceful walk around Lake Clara Meer.",
+        "hint": "Hint: This lake is a central feature of the park, often surrounded by ducks and geese.",
+        "coordinates": {
+          "lat": 33.7816,
+          "lng": -84.3742
+        }
+      }
+    ]
+  } 

@@ -1,0 +1,18 @@
+[
+    {
+      "huntId": "hunt001",
+      "title": "Midtown Scavenger Hunt",
+      "shortDescription": "Explore the hidden gems of Midtown with this exciting scavenger hunt!",
+      "image": "/hunts/images/midtown.jpg",
+      "jsonFile": "/hunts/hunt001.json"
+    },
+    {
+      "huntId": "hunt002",
+      "title": "Downtown Discovery",
+      "shortDescription": "Discover the landmarks of Downtown in this thrilling hunt!",
+      "image": "/hunts/images/downtown.jpg",
+      "jsonFile": "/hunts/hunt002.json"
+    }
+    // Add more tours as needed
+  ]
+  

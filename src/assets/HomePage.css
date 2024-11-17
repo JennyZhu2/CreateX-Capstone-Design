@@ -1,74 +1,36 @@
 /* src/assets/HomePage.css */
 
 .home-page {
-  padding: 20px;
-  text-align: center;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
+  text-align: center;
 }
 
 .search-container {
   margin: 20px 0;
+  display: flex;
+  justify-content: center;
 }
 
 .search-bar {
-  width: 300px;
-  padding: 10px;
+  width: 60%;
+  max-width: 600px;
+  padding: 15px;
   font-size: 1em;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.tour-container {
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.horizontal-scroll {
-  display: flex;
-  overflow-x: auto;
-  padding: 20px 0;
-  scroll-snap-type: x mandatory;
+.tour-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  padding: 20px;
 }
 
-.tour-card {
-  flex: 0 0 auto;
-  width: 280px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  cursor: pointer;
-  background-color: #fff;
-  transition: transform 0.2s;
-  scroll-snap-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.tour-card:hover {
-  transform: scale(1.05);
-}
-
-.tour-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
-.tour-info {
-  padding: 10px;
-}
-
-.tour-title {
-  font-size: 1.2em;
-  font-weight: bold;
-  margin: 10px 0 5px;
-}
-
-.tour-description {
-  font-size: 0.9em;
-  color: #555;
+/* Center the header and add some spacing */
+h1 {
+  margin-bottom: 20px;
 }
