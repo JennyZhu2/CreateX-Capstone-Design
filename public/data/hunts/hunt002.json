@@ -2,7 +2,7 @@
     "huntId": "hunt002",
     "title": "Piedmont Park Explorer",
     "shortDescription": "Discover the best spots in Piedmont Park with this exciting scavenger hunt!",
-    "image": "./images/park.jpg",
+    "image": "images/park.jpg",
     "fullDescription": "This scavenger hunt will take you through the beautiful Piedmont Park, exploring scenic locations, historic monuments, and popular local spots. Perfect for a fun day out in Atlanta!",
     "coordinates": {
       "lat": 33.7851,

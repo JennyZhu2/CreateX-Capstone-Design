@@ -2,7 +2,7 @@
   "huntId": "hunt001",
   "title": "Midtown Scavenger Hunt",
   "shortDescription": "Explore the hidden gems of Midtown with this exciting scavenger hunt!",
-  "image": "./midtown.jpg",
+  "image": "images/midtown.jpg",
   "fullDescription": "This scavenger hunt takes you through the vibrant Midtown area, highlighting art installations, historic landmarks, and local favorites.",
   "coordinates": {
     "lat": 33.784332,
