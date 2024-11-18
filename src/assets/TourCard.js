@@ -4,7 +4,7 @@ import './TourCard.css';
 
 function TourCard({ tour, onClick }) {
   return (
-    <div className="tour-card" onClick={onClick}>
+    <div style={{width: '100%', height: '100%'}} className="tour-card" onClick={onClick}>
       <img src={'./data/hunts/' + tour.imageUrl} alt={tour.name} className="tour-image" />
       <div className="tour-info">
         <h3>{tour.name}</h3>

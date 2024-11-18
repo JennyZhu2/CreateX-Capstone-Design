@@ -25,7 +25,7 @@
 
 .tour-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
   gap: 20px;
   padding: 20px;
 }
