@@ -5,7 +5,7 @@ import './TourCard.css';
 function TourCard({ tour, onClick }) {
   return (
     <div className="tour-card" onClick={onClick}>
-      <img src={tour.imageUrl} alt={tour.name} className="tour-image" />
+      <img src={'./data/hunts/' + tour.imageUrl} alt={tour.name} className="tour-image" />
       <div className="tour-info">
         <h3>{tour.name}</h3>
         <p>{tour.shortDescription}</p>
