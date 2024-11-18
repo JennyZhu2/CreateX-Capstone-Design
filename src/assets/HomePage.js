@@ -9,13 +9,13 @@ function HomePage() {
 
   useEffect(() => {
     // Fetch the index.json file to get the list of tours
-    fetch('public/data/hunts/index.json')
+    fetch('./data/hunts/index.json')
       .then((response) => response.json())
       .then((tourSummaries) => {
         // Fetch each individual tour JSON file
         Promise.all(
           tourSummaries.map((tourSummary) =>
-            fetch(tourSummary.jsonFile)
+            fetch('./data/' + tourSummary.jsonFile)
               .then((response) => response.json())
               .catch((error) => {
                 console.error(`Failed to fetch ${tourSummary.jsonFile}:`, error);
