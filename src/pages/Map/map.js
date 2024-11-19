@@ -7,6 +7,12 @@ function MapPage() {
   const googleMapRef = useRef(null);
   const [huntData, setHuntData] = useState(null);
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
+  const [completedMissions, setCompletedMissions] = useState([]);
+  const handleCompleteTask = (index) => {
+    if (!completedMissions.includes(index)) {
+      setCompletedMissions((prev) => [...prev, index]);
+    }
+  };
   const { tourId } = useParams();
 
   // Load hunt data
@@ -124,16 +130,22 @@ function MapPage() {
 
   return (
     <div style={{ display: "flex", height: "100vh" }}>
+      {/* Sidebar */}
       <div
         style={{
           width: "250px",
           backgroundColor: "#f4f4f4",
           padding: "15px",
           boxShadow: "2px 0 5px rgba(0, 0, 0, 0.1)",
-          overflowY: "auto"
+          overflowY: "auto",
         }}
       >
-        <h3>Tasks</h3>
+        {/* Task Progress Tracker */}
+        <h3>
+          Progress: {completedMissions.length} / {huntData.missions.length}
+        </h3>
+  
+        {/* Missions List */}
         {huntData.missions.map((mission, index) => (
           <div
             key={index}
@@ -145,26 +157,49 @@ function MapPage() {
               backgroundColor: "#fff",
             }}
           >
+            {/* Mission Title */}
             <h4
               style={{ cursor: "pointer", color: "blue" }}
               onClick={() => panToMission(mission)}
             >
               <Link to={`/post`}>{mission.title}</Link>
             </h4>
+            {/* Mission Short Description */}
             <p>{mission.shortDescription}</p>
+  
+            {/* Task Completion */}
+            {completedMissions.includes(index) ? (
+              <p style={{ color: "green", fontWeight: "bold" }}>Task Completed!</p>
+            ) : (
+              <button
+                onClick={() => handleCompleteTask(index)}
+                style={{
+                  padding: "5px 10px",
+                  backgroundColor: "#4CAF50",
+                  color: "#fff",
+                  border: "none",
+                  borderRadius: "4px",
+                  cursor: "pointer",
+                  marginTop: "10px",
+                }}
+              >
+                Mark as Complete
+              </button>
+            )}
           </div>
         ))}
       </div>
-
-      <div 
+  
+      {/* Map Container */}
+      <div
         ref={googleMapRef}
-        style={{ 
+        style={{
           flexGrow: 1,
-          height: "100%"
+          height: "100%",
         }}
       />
     </div>
   );
-}
+}  
 
 export default MapPage;
