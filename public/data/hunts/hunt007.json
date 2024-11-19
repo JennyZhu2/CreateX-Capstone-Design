@@ -1,0 +1,63 @@
+{
+    "huntId": "hunt007",
+    "title": "Atlanta Café Crawl",
+    "shortDescription": "Discover the best café spots in Atlanta with this delightful scavenger hunt!",
+    "image": "images/coffee_atl.jpg",
+    "fullDescription": "Explore Atlanta's vibrant coffee culture, visiting cozy cafés, trendy coffee shops, and unique spots loved by locals. Perfect for coffee enthusiasts or anyone looking for a caffeine-filled adventure!",
+    "coordinates": {
+        "lat": 33.7490,
+        "lng": -84.3880
+    },
+    "missions": [
+        {
+            "step": 1,
+            "title": "Dancing Goats Coffee Bar",
+            "shortDescription": "Start your tour at Dancing Goats Coffee Bar, known for its signature brews.",
+            "hint": "Hint: Look for a spot with a cozy patio and delicious lattes in Ponce City Market.",
+            "coordinates": {
+                "lat": 33.7726,
+                "lng": -84.3657
+            }
+        },
+        {
+            "step": 2,
+            "title": "Chattahoochee Coffee Company",
+            "shortDescription": "Visit this hidden gem with stunning views of the Chattahoochee River.",
+            "hint": "Hint: This café is tucked away in an apartment complex but worth the visit for its serene riverside vibe.",
+            "coordinates": {
+                "lat": 33.8761,
+                "lng": -84.4446
+            }
+        },
+        {
+            "step": 3,
+            "title": "Brash Coffee",
+            "shortDescription": "Stop by Brash Coffee for a minimalist coffee experience.",
+            "hint": "Hint: Located in a repurposed shipping container in the heart of Westside Provisions District.",
+            "coordinates": {
+                "lat": 33.7862,
+                "lng": -84.4117
+            }
+        },
+        {
+            "step": 4,
+            "title": "Chrome Yellow Trading Co.",
+            "shortDescription": "Enjoy artisanal coffee and chill vibes at Chrome Yellow.",
+            "hint": "Hint: Look for a hip coffee spot with minimalist décor in the Old Fourth Ward.",
+            "coordinates": {
+                "lat": 33.7618,
+                "lng": -84.3756
+            }
+        },
+        {
+            "step": 5,
+            "title": "Revelator Coffee Company",
+            "shortDescription": "End your café crawl at Revelator Coffee, known for its modern aesthetics and exceptional brews.",
+            "hint": "Hint: This café is located in Downtown Atlanta and is a favorite among locals.",
+            "coordinates": {
+                "lat": 33.7685,
+                "lng": -84.3872
+            }
+        }
+    ]
+}

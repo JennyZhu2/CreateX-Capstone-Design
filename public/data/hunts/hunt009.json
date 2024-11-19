@@ -1,0 +1,73 @@
+{
+    "huntId": "hunt009",
+    "title": "Atlanta BeltLine Adventure",
+    "shortDescription": "Discover the beauty and vibrancy of the Atlanta BeltLine with this engaging scavenger hunt!",
+    "image": "images/beltline.jpg",
+    "fullDescription": "Explore the scenic trails, iconic murals, and unique spots along the Atlanta BeltLine. Perfect for a fun and active outing for locals and visitors alike!",
+    "coordinates": {
+        "lat": 33.7698,
+        "lng": -84.3620
+    },
+    "missions": [
+        {
+            "step": 1,
+            "title": "Ponce City Market Entrance",
+            "shortDescription": "Start your journey at the bustling Ponce City Market BeltLine entrance.",
+            "hint": "Hint: Look for the popular spot where shopping, dining, and trails meet.",
+            "coordinates": {
+                "lat": 33.7726,
+                "lng": -84.3656
+            }
+        },
+        {
+            "step": 2,
+            "title": "Historic Fourth Ward Park",
+            "shortDescription": "Take a stroll through the beautiful Historic Fourth Ward Park.",
+            "hint": "Hint: Look for a serene green space with a pond and amphitheater along the BeltLine.",
+            "coordinates": {
+                "lat": 33.7690,
+                "lng": -84.3637
+            }
+        },
+        {
+            "step": 3,
+            "title": "Krog Street Tunnel",
+            "shortDescription": "Check out the vibrant street art at Krog Street Tunnel.",
+            "hint": "Hint: Find the tunnel where Atlanta's graffiti scene comes alive.",
+            "coordinates": {
+                "lat": 33.7524,
+                "lng": -84.3647
+            }
+        },
+        {
+            "step": 4,
+            "title": "Old Fourth Ward Skatepark",
+            "shortDescription": "Visit the lively Old Fourth Ward Skatepark.",
+            "hint": "Hint: Look for a hub of activity with skaters and a connection to the BeltLine.",
+            "coordinates": {
+                "lat": 33.7668,
+                "lng": -84.3596
+            }
+        },
+        {
+            "step": 5,
+            "title": "The BeltLine Arboretum",
+            "shortDescription": "Explore the lush greenery and educational exhibits at the BeltLine Arboretum.",
+            "hint": "Hint: Look for an area showcasing native plants along the Eastside Trail.",
+            "coordinates": {
+                "lat": 33.7716,
+                "lng": -84.3614
+            }
+        },
+        {
+            "step": 6,
+            "title": "The Shed at Ponce City Market",
+            "shortDescription": "End your adventure with a meal or drink at The Shed.",
+            "hint": "Hint: Find the open-air space offering views of the BeltLine and local vendors.",
+            "coordinates": {
+                "lat": 33.7725,
+                "lng": -84.3660
+            }
+        }
+    ]
+}

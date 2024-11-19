@@ -1,0 +1,65 @@
+[
+  {
+    "huntId": "hunt001",
+    "title": "Midtown Scavenger Hunt",
+    "shortDescription": "Explore the hidden gems of Midtown with this exciting scavenger hunt!",
+    "image": "images/midtown.jpg",
+    "jsonFile": "hunts/hunt001.json"
+  },
+  {
+    "huntId": "hunt002",
+    "title": "Piedmont Park Explorer",
+    "shortDescription": "Discover the best spots in Piedmont Park with this exciting scavenger hunt!",
+    "image": "images/park.jpg",
+    "jsonFile": "hunts/hunt002.json"
+  },
+  {
+    "huntId": "hunt003",
+    "title": "Inman Park Adventure",
+    "shortDescription": "Explore the charm and history of Inman Park with this engaging scavenger hunt!",
+    "image": "images/inman_park.jpg",
+    "jsonFile": "hunts/hunt003.json"
+  },
+  {
+    "huntId": "hunt004",
+    "title": "Downtown Atlanta Discovery",
+    "shortDescription": "Discover the heart of Atlanta with this exciting downtown scavenger hunt!",
+    "image": "images/downtown.jpg",
+    "jsonFile": "hunts/hunt004.json"
+  },
+  {
+    "huntId": "hunt005",
+    "title": "Buckhead Treasures",
+    "shortDescription": "Explore the upscale charm of Buckhead with this delightful scavenger hunt!",
+    "image": "images/buckhead.jpg",
+    "jsonFile": "hunts/hunt005.json"
+  },
+  {
+    "huntId": "hunt006",
+    "title": "Battery Atlanta Adventure",
+    "shortDescription": "Explore the vibrant Battery Atlanta with this exciting scavenger hunt!",
+    "image": "images/battery_park.jpg",
+    "jsonFile": "hunts/hunt006.json"
+  },
+  {
+    "huntId": "hunt007",
+    "title": "Atlanta Café Crawl",
+    "shortDescription": "Discover the best café spots in Atlanta with this delightful scavenger hunt!",
+    "image": "images/coffee_atl.jpg",
+    "jsonFile": "hunts/hunt007.json"
+  },
+  {
+    "huntId": "hunt008",
+    "title": "Atlanta Hip-Hop Culture Tour",
+    "shortDescription": "Dive into the rich history and vibrant hip-hop scene of Atlanta with this exciting scavenger hunt!",
+    "image": "images/hiphop.jpg",
+    "jsonFile": "hunts/hunt008.json"
+  },
+  {
+    "huntId": "hunt009",
+    "title": "Atlanta BeltLine Adventure",
+    "shortDescription": "Discover the beauty and vibrancy of the Atlanta BeltLine with this engaging scavenger hunt!",
+    "image": "images/beltline.jpg",
+    "jsonFile": "hunts/hunt009.json"
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "huntId": "hunt001",
+  "title": "Midtown Scavenger Hunt",
+  "shortDescription": "Explore the hidden gems of Midtown with this exciting scavenger hunt!",
+  "image": "images/midtown.jpg",
+  "fullDescription": "This scavenger hunt takes you through the vibrant Midtown area, highlighting art installations, historic landmarks, and local favorites.",
+  "coordinates": {
+    "lat": 33.784332,
+    "lng": -84.380562
+  },
+  "missions": [
+    {
+      "step": 1,
+      "title": "Art Installation",
+      "shortDescription": "Visit the famous art installation between two office buildings.",
+      "hint": "Hint: Look for the sculpture inspired by nature.",
+      "coordinates": {
+        "lat": 33.7851,
+        "lng": -84.3812
+      }
+    },
+    {
+      "step": 2,
+      "title": "Historic Landmark",
+      "shortDescription": "Discover the landmark building that shaped Midtown's skyline.",
+      "hint": "Hint: It’s the tallest building in the area.",
+      "coordinates": {
+        "lat": 33.7865,
+        "lng": -84.3828
+      }
+    },
+    {
+      "step": 3,
+      "title": "Local Cafe",
+      "shortDescription": "End your hunt with a stop at a local favorite cafe.",
+      "hint": "Hint: The cafe’s name rhymes with ‘mocha’.",
+      "coordinates": {
+        "lat": 33.7880,
+        "lng": -84.3830
+      }
+    }
+  ]
+}
