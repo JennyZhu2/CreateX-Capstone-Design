@@ -13,21 +13,7 @@ function Tours() {
     fetch('./data/hunts/index.json')
       .then((response) => response.json())
       .then((tourSummaries) => {
-        // Fetch each individual tour JSON file
-        Promise.all(
-          tourSummaries.map((tourSummary) =>
-            fetch('./data/' + tourSummary.jsonFile)
-              .then((response) => response.json())
-              .catch((error) => {
-                console.error(`Failed to fetch ${tourSummary.jsonFile}:`, error);
-                return null; // Return null for failed fetches
-              })
-          )
-        ).then((tourDetails) => {
-          // Filter out any nulls from failed fetches
-          const validTours = tourDetails.filter((tour) => tour !== null);
-          setTours(validTours);
-        });
+        setTours(tourSummaries);
       })
       .catch((error) => {
         console.error('Failed to fetch index.json:', error);
@@ -35,8 +21,7 @@ function Tours() {
   }, []);
 
   const handleTourClick = (huntId) => {
-    console.log("clicked");
-    navigate(`/map/${huntId}`);
+    navigate(`/view/${huntId}`);
   };
 
   return (

@@ -9,6 +9,7 @@ import MapPage from "./pages/Map/map"; // Update this import
 import Dashboard from "./pages/UserDashboard/UserDashboard";
 import Post from "./pages/PostingPage/PostingPage";
 import Tours from "./pages/Tours/Tours"
+import TourView from "./pages/TourView/TourView"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/post" element={<Post />} />
         <Route path="/tours" element={<Tours />} />
+        <Route path="/view/:tourId" element={<TourView />} />
       </Routes>
       <Footer />
     </Router>

@@ -34,7 +34,7 @@ function HomePage() {
   }, []);
 
   const handleTourClick = (huntId) => {
-    navigate(`/map/${huntId}`);
+    navigate(`/view/${huntId}`);
   };
 
   return (
