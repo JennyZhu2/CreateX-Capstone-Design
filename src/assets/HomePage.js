@@ -48,7 +48,7 @@ function HomePage() {
         />
       </div>
 
-      <h1>Available Tours</h1>
+      <h1>Featured Tours</h1>
 
       {/* Tour Grid */}
       <div className="tour-grid">
