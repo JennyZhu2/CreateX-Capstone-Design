@@ -1,0 +1,63 @@
+{
+    "huntId": "hunt004",
+    "title": "Downtown Atlanta Discovery",
+    "shortDescription": "Discover the heart of Atlanta with this exciting downtown scavenger hunt!",
+    "image": "images/downtown.jpg",
+    "fullDescription": "Explore the bustling streets of Downtown Atlanta, visiting iconic landmarks, cultural hotspots, and hidden gems. Perfect for tourists and locals alike who want to experience the vibrant energy of the city!",
+    "coordinates": {
+        "lat": 33.7550,
+        "lng": -84.3900
+    },
+    "missions": [
+        {
+            "step": 1,
+            "title": "Centennial Olympic Park",
+            "shortDescription": "Begin your adventure at Atlanta's iconic Centennial Olympic Park.",
+            "hint": "Hint: Look for the fountains that honor the 1996 Olympic Games.",
+            "coordinates": {
+                "lat": 33.7603,
+                "lng": -84.3935
+            }
+        },
+        {
+            "step": 2,
+            "title": "World of Coca-Cola",
+            "shortDescription": "Visit the World of Coca-Cola to learn about the history of this famous beverage.",
+            "hint": "Hint: Find the building with a giant Coca-Cola bottle out front.",
+            "coordinates": {
+                "lat": 33.7628,
+                "lng": -84.3927
+            }
+        },
+        {
+            "step": 3,
+            "title": "SkyView Atlanta",
+            "shortDescription": "Take a ride on SkyView Atlanta, the downtown Ferris wheel.",
+            "hint": "Hint: Look for the towering Ferris wheel that offers panoramic views of the city.",
+            "coordinates": {
+                "lat": 33.7573,
+                "lng": -84.3911
+            }
+        },
+        {
+            "step": 4,
+            "title": "Georgia State Capitol",
+            "shortDescription": "Explore the historic Georgia State Capitol building.",
+            "hint": "Hint: This building has a distinctive gold dome and is the seat of Georgia's government.",
+            "coordinates": {
+                "lat": 33.7490,
+                "lng": -84.3880
+            }
+        },
+        {
+            "step": 5,
+            "title": "Sweet Auburn Curb Market",
+            "shortDescription": "End your hunt with a bite at the Sweet Auburn Curb Market.",
+            "hint": "Hint: Look for the vibrant indoor market that offers diverse food and goods.",
+            "coordinates": {
+                "lat": 33.7522,
+                "lng": -84.3797
+            }
+        }
+    ]
+}
