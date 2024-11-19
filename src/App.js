@@ -13,20 +13,22 @@ import TourView from "./pages/TourView/TourView"
 
 function App() {
   return (
-    <Router>
-      <Header /> 
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<Login />} />
-        {/* Update the map route to include a parameter */}
-        <Route path="/map/:tourId" element={<MapPage />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/post" element={<Post />} />
-        <Route path="/tours" element={<Tours />} />
-        <Route path="/view/:tourId" element={<TourView />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <div>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<Login />} />
+          {/* Update the map route to include a parameter */}
+          <Route path="/map/:tourId" element={<MapPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/post" element={<Post />} />
+          <Route path="/tours" element={<Tours />} />
+          <Route path="/view/:tourId" element={<TourView />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </div>
   );
 }
 
