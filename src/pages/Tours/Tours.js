@@ -21,7 +21,9 @@ function Tours() {
   }, []);
 
   const handleTourClick = (huntId) => {
+
     navigate(`/view/${huntId}`);
+
   };
 
   return (

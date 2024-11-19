@@ -1,127 +1,205 @@
-// // src/pages/MapPage.js
-
-import React, { useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
-
-const stops = [
-  { name: "Stop 1", text: "Your destination is an art installation hidden between the offices of two banking giants. Hint: let our first president lead the way!", location: { lat: 40.718, lng: -74.012 }, radius: 200 },
-  { name: "Stop 2", text: "Your next destination is a coffee turned vinyl store. Hint: What rhymes with latte?", location: { lat: 40.721, lng: -74.007 }, radius: 100 },
-  { name: "Stop 3", text: "Spend the evening at your last destination: a historic bar in westside Soho. Hint: Why did the chicken cross the road? Cluck", location: { lat: 40.725, lng: -74.002 }, radius: 200 },
-];
+import React, { useEffect, useState, useRef } from "react";
+import axios from "axios";
+import { Link, useParams } from "react-router-dom";
 
 function MapPage() {
-  let map; // Define the map variable to access it globally within the component
+  const mapRef = useRef(null);
+  const googleMapRef = useRef(null);
+  const [huntData, setHuntData] = useState(null);
+  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
+  const [completedMissions, setCompletedMissions] = useState([]);
+  const handleCompleteTask = (index) => {
+    if (!completedMissions.includes(index)) {
+      setCompletedMissions((prev) => [...prev, index]);
+    }
+  };
+  const { tourId } = useParams();
 
+  // Load hunt data
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBnBuUdTjkuJ60xB5HeoS5uivE-ejRg4kg&libraries=places,geometry";
-    script.async = true;
-    script.onload = () => {
-      initMap();
-    };
-    document.body.appendChild(script);
-
-    function initMap() {
-      map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 40.7128, lng: -74.0060 },
-        zoom: 13,
+    if (!tourId) return;
+    axios
+      .get(`/data/hunts/${tourId}.json`)
+      .then(response => {
+        setHuntData(response.data);
+      })
+      .catch(error => {
+        console.error("Error loading scavenger hunt data:", error);
       });
+  }, [tourId]);
 
-      stops.forEach(stop => {
-        addStop(map, stop);
-        discoverNeighborhood(map, stop);
-      });
+  // Load Google Maps Script
+  useEffect(() => {
+    // Check if script is already loaded
+    if (window.google?.maps) {
+      setIsScriptLoaded(true);
+      return;
     }
 
-    function addStop(map, stop) {
-      const marker = new google.maps.Marker({
-        position: stop.location,
-        map: map,
-        title: stop.name,
-      });
-
-      const circle = new google.maps.Circle({
-        map: map,
-        center: stop.location,
-        radius: stop.radius,
-        fillColor: "#FF0000",
-        fillOpacity: 0.3,
-        strokeColor: "#FF0000",
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-      });
-
-      marker.addListener("click", () => {
-        alert(`Start your scavenger hunt: Welcome to ${stop.name}!
+    const loadGoogleMapsScript = () => {
+      if (!window.google) {
+        const script = document.createElement("script");
+        script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBnBuUdTjkuJ60xB5HeoS5uivE-ejRg4kg&libraries=places,geometry`;
+        script.async = true;
+        script.defer = true;
         
-        ${stop.text}`);
-      });
-    }
+        script.addEventListener("load", () => {
+          setIsScriptLoaded(true);
+        });
 
-    function discoverNeighborhood(map, stop) {
-      const service = new google.maps.places.PlacesService(map);
-      const request = {
-        location: stop.location,
-        radius: stop.radius,
-        type: ["landmark"],
-      };
+        document.head.appendChild(script);
+      }
+    };
 
-      service.nearbySearch(request, (results, status) => {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-          results.forEach(place => {
-            new google.maps.Marker({
-              position: place.geometry.location,
-              map: map,
-              title: place.name,
-              icon: { url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png" },
-            });
-          });
-        }
-      });
-    }
+    loadGoogleMapsScript();
   }, []);
 
-  // Function to pan the map to a specific stop
-  const panToStop = (stop) => {
-    if (map) {
-      map.panTo(stop.location);
-      map.setZoom(15); // Adjust zoom level if needed
+  // Initialize map
+  useEffect(() => {
+    if (!isScriptLoaded || !huntData || !googleMapRef.current) return;
+
+    const initMap = () => {
+      if (!mapRef.current) {
+        mapRef.current = new window.google.maps.Map(googleMapRef.current, {
+          center: huntData.coordinates,
+          zoom: 15,
+        });
+
+        // Add markers and circles
+        huntData.missions.forEach(mission => {
+          const marker = new window.google.maps.Marker({
+            position: mission.coordinates,
+            map: mapRef.current,
+            title: mission.title,
+          });
+
+          const circle = new window.google.maps.Circle({
+            map: mapRef.current,
+            center: mission.coordinates,
+            radius: 150,
+            fillColor: "#FF0000",
+            fillOpacity: 0.3,
+            strokeColor: "#FF0000",
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+          });
+
+          marker.addListener("click", () => {
+            const modal = document.getElementById("custom-alert");
+            const title = document.getElementById("modal-title");
+            const text = document.getElementById("modal-text");
+            const closeButton = document.querySelector(".close-btn");
+
+            title.textContent = `Mission: ${mission.title}`;
+            text.textContent = `${mission.shortDescription}\n\nHint: ${mission.hint}`;
+            modal.classList.remove("hidden");
+
+            const closeModal = () => {
+              modal.classList.add("hidden");
+              // Clean up listeners
+              closeButton.removeEventListener("click", closeModal);
+              window.removeEventListener("click", outsideClickHandler);
+            };
+
+            const outsideClickHandler = (e) => {
+              if (e.target === modal) {
+                closeModal();
+              }
+            };
+
+            closeButton.addEventListener("click", closeModal);
+            window.addEventListener("click", outsideClickHandler);
+          });
+        });
+      }
+    };
+
+    initMap();
+  }, [isScriptLoaded, huntData]);
+
+  const panToMission = (mission) => {
+    if (mapRef.current) {
+      mapRef.current.panTo(mission.coordinates);
+      mapRef.current.setZoom(15);
     }
   };
 
+  if (!huntData) {
+    return <p>Loading scavenger hunt data...</p>;
+  }
+
   return (
-    <div style={{ display: "flex" }}>
-      {/* Left sidebar for tasks */}
-      <div style={{
-        width: "250px",
-        backgroundColor: "#f4f4f4",
-        padding: "15px",
-        boxShadow: "2px 0 5px rgba(0, 0, 0, 0.1)",
-      }}>
-        <h3>Tasks</h3>
-        {stops.map((stop, index) => (
-          <div key={index} style={{
-            marginBottom: "15px",
-            padding: "10px",
-            border: "1px solid #ddd",
-            borderRadius: "4px",
-            backgroundColor: "#fff",
-          }}>
-            <h4 
+    <div style={{ display: "flex", height: "100vh" }}>
+      {/* Sidebar */}
+      <div
+        style={{
+          width: "250px",
+          backgroundColor: "#f4f4f4",
+          padding: "15px",
+          boxShadow: "2px 0 5px rgba(0, 0, 0, 0.1)",
+          overflowY: "auto",
+        }}
+      >
+        {/* Task Progress Tracker */}
+        <h3>
+          Progress: {completedMissions.length} / {huntData.missions.length}
+        </h3>
+  
+        {/* Missions List */}
+        {huntData.missions.map((mission, index) => (
+          <div
+            key={index}
+            style={{
+              marginBottom: "15px",
+              padding: "10px",
+              border: "1px solid #ddd",
+              borderRadius: "4px",
+              backgroundColor: "#fff",
+            }}
+          >
+            {/* Mission Title */}
+            <h4
               style={{ cursor: "pointer", color: "blue" }}
-              onClick={() => panToStop(stop)}
+              onClick={() => panToMission(mission)}
             >
-               <Link to={`/post`}>{stop.name}</Link>
+              <Link to={`/post`}>{mission.title}</Link>
             </h4>
-            <p>{stop.text}</p>
+            {/* Mission Short Description */}
+            <p>{mission.shortDescription}</p>
+  
+            {/* Task Completion */}
+            {completedMissions.includes(index) ? (
+              <p style={{ color: "green", fontWeight: "bold" }}>Task Completed!</p>
+            ) : (
+              <button
+                onClick={() => handleCompleteTask(index)}
+                style={{
+                  padding: "5px 10px",
+                  backgroundColor: "#4CAF50",
+                  color: "#fff",
+                  border: "none",
+                  borderRadius: "4px",
+                  cursor: "pointer",
+                  marginTop: "10px",
+                }}
+              >
+                Mark as Complete
+              </button>
+            )}
           </div>
         ))}
       </div>
-
-      {/* Map container */}
-      <div id="map" style={{ flexGrow: 1, height: "100vh" }}></div>
+  
+      {/* Map Container */}
+      <div
+        ref={googleMapRef}
+        style={{
+          flexGrow: 1,
+          height: "100%",
+        }}
+      />
     </div>
   );
-}
+}  
 
 export default MapPage;
