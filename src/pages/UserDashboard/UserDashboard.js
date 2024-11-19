@@ -29,7 +29,7 @@ function UserDashboard() {
 
   // Navigate to the Posting Page
   const handlePostHunt = () => {
-    navigate("/post-hunt");
+    navigate("/post");
   };
 
   return (
