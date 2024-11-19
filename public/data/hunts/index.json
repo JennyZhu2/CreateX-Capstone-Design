@@ -39,21 +39,21 @@
     "title": "Battery Atlanta Adventure",
     "shortDescription": "Explore the vibrant Battery Atlanta with this exciting scavenger hunt!",
     "image": "images/battery_park.jpg",
-    "jsonFile": "hunts/hunt007.json"
+    "jsonFile": "hunts/hunt006.json"
   },
   {
     "huntId": "hunt007",
     "title": "Atlanta Café Crawl",
     "shortDescription": "Discover the best café spots in Atlanta with this delightful scavenger hunt!",
     "image": "images/coffee_atl.jpg",
-    "jsonFile": "hunts/hunt008.json"
+    "jsonFile": "hunts/hunt007.json"
   },
   {
     "huntId": "hunt008",
     "title": "Atlanta Hip-Hop Culture Tour",
     "shortDescription": "Dive into the rich history and vibrant hip-hop scene of Atlanta with this exciting scavenger hunt!",
     "image": "images/hiphop.jpg",
-    "jsonFile": "hunts/hunt009.json"
+    "jsonFile": "hunts/hunt008.json"
   },
   {
     "huntId": "hunt009",
