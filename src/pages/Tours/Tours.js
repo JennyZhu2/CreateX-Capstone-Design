@@ -35,7 +35,7 @@ function Tours() {
   }, []);
 
   const handleTourClick = (huntId) => {
-    console.log("clicked");
+    console.log("clicked with huntId:", huntId);
     navigate(`/map/${huntId}`);
   };
 
