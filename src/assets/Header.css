@@ -18,8 +18,8 @@
  .nav-links a {
   margin-left: 24px;
   color: #ffffff;
-  text-decoration: underline;
+  text-decoration: none;
 }
  .nav-links a:hover {
-  color: #4CAF50;
+  text-decoration: underline;
 }

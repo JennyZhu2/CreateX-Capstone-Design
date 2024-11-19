@@ -18,7 +18,7 @@ function PostingPage() {
             <textarea placeholder="Enter description" />
           </div>
           <div className="form-group">
-            <label>Upload Photos/Videos:</label>
+            <label>Upload Photo:</label>
             <input type="file" multiple />
           </div>
           <div className="form-group">

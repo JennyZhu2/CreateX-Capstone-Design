@@ -2,6 +2,7 @@
     background-image: url('https://wallpapercave.com/wp/wp3594888.jpg'); /* Replace with our image URL */
     background-size: cover;
     background-position: center;
+    background-blend-mode: lighten;
     max-width: 100%;
     text-align: center;
     color: #ffffff;
