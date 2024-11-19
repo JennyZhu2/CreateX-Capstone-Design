@@ -45,7 +45,7 @@ function TourView() {
           <div>
             <h1>{tour.title}</h1>
             <h2>{tour.shortDescription}</h2>
-            <img src={'../data/hunts/' + tour.image} alt={tour.name} className="tour-image" />
+            <img src={'../data/hunts/' + tour.image} alt={tour.name} className="img"/>
             <h3>{tour.fullDescription}</h3>
             <h2>Here are the stops you'll visit along this tour</h2>
             {tour.missions.map((mission) => (
