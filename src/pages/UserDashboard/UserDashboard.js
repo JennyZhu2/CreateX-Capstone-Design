@@ -39,7 +39,7 @@ function UserDashboard() {
         setUserData(data);
       })
       .catch((error) => {
-        console.error('Failed to fetch user001.json:', error);
+        console.error(`Failed to fetch ${userId}.json:`, error);
       });
   }, []);
   // Fetch the tour data from index
@@ -74,7 +74,7 @@ function UserDashboard() {
   };
 
   const handleTourClick = (tourID) => {
-    navigate(`/view_withhunt/${tourID}`);
+    navigate(`/view/${tourID}`);
   };
 
 

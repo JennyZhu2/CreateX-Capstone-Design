@@ -7,6 +7,8 @@ import './TourView.css';
 function TourView() {
   const { tourId } = useParams();
   const [tours, setTours] = useState([]);
+  const [owned, setOwned] = useState(false);
+  const userId = localStorage.getItem("userId");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,6 +35,19 @@ function TourView() {
       });
   }, []);
 
+  useEffect(() => {
+    fetch(`/data/${userId}.json`)
+      .then((response) => response.json())
+      .then((data) => {
+        const isOwned = data.purchased.includes(tourId) || data.created.includes(tourId);
+        setOwned(isOwned);
+      })
+      .catch((error) => {
+        console.error(`Failed to fetch ${userId}.json:`, error);
+      });
+  }, []);
+
+
   const handleStartHunt = (tourId) => {
     navigate(`/map/${tourId}`);
   }; 
@@ -52,7 +67,15 @@ function TourView() {
               <h3>{mission.title}</h3>
             ))
             }
-            <btn onClick={() => handleStartHunt(tourId)}>Purchase</btn>
+            {owned ? (
+              <>
+                <button className='cta-button' onClick={() => handleStartHunt(tourId)}>Start Tour</button>
+              </>
+            ) : (
+              <>
+                <button className='cta-button' onClick={() => handleStartHunt(tourId)}>Purchase</button>
+              </>
+            )}
           </div>
           ))
         }
