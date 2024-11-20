@@ -33,8 +33,8 @@ function TourView() {
       });
   }, []);
 
-  const handleStartHunt = (huntId) => {
-    navigate(`/map/${huntId}`);
+  const handleStartHunt = (tourId) => {
+    navigate(`/map/${tourId}`);
   }; 
 
   return (
@@ -52,7 +52,7 @@ function TourView() {
               <h3>{mission.title}</h3>
             ))
             }
-            <btn onClick={() => handleStartHunt()}>Purchase</btn>
+            <btn onClick={() => handleStartHunt(tourId)}>Purchase</btn>
           </div>
           ))
         }

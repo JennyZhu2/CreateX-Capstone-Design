@@ -12,6 +12,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 90px; /* Increased gap between the cards */
     margin: 0 auto;
+    margin-bottom: 50px;
     max-width: 1400px;
   }
    .tour-card {
