@@ -1,13 +1,24 @@
 // src/pages/UserDashboard/UserDashboard.js
 
-import React from 'react';
+
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import Footer from '../../assets/Footer';
 import TourCard from '../../assets/TourCard';
 import './UserDashboard.css';
 
+import React, { useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import TourCard from "../../assets/TourCard";
+import "./UserDashboard.css";
+
+
 function UserDashboard() {
-  const navigate = useNavigate();
+  const [userData, setData] = useState([]);
+  const [purchasedTours, setPurchasedTours] = useState([]);
+  const [createdTours, setCreatedTours] = useState([]);
+  const userId = localStorage.getItem("userId");
+
 
   const userData = {
     profilePicture: 'https://via.placeholder.com/150',
@@ -25,6 +36,40 @@ function UserDashboard() {
     ],
   };
 
+  // Fetch the user data
+  useEffect(() => {
+    fetch(`./data/${userId}.json`)
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data);
+      })
+      .catch((error) => {
+        console.error('Failed to fetch user001.json:', error);
+      });
+  }, []);
+  // Fetch the tour data from index
+  useEffect(() => {
+    if (userData && userData.purchased && userData.created) {
+      fetch('./data/hunts/index.json')
+        .then((response) => response.json())
+        .then((tours) => {
+          const purchased = tours.filter((tour) =>
+            userData.purchased.includes(tour.huntId)
+          );
+          const created = tours.filter((tour) =>
+            userData.created.includes(tour.huntId)
+          );
+
+          setPurchasedTours(purchased);
+          setCreatedTours(created);
+        })
+        .catch((error) => {
+          console.error('Failed to fetch index.json:', error);
+        });
+    }
+  }, [userData]);
+
+
 
   const handlePostHunt = () => {
     navigate('/post');
@@ -33,6 +78,10 @@ function UserDashboard() {
   const handleTourClick = (tourID) => {
     navigate(`/view_withhunt/${tourID}`);
   };
+
+  const handleTourClick = (huntId) => {
+    navigate(`/view/${huntId}`);
+  }
 
   return (
     <div>
@@ -50,13 +99,13 @@ function UserDashboard() {
           </div>
           <div className="user-info">
             <h2>{userData.name}</h2>
-            <p>Username: {userData.username}</p>
             <p>Email: {userData.email}</p>
           </div>
 
           <div className="user-tours">
             <h3>Purchased Tours</h3>
             <div className="tours-list">
+
               {userData.purchasedTours.map((tour) => (
                 <TourCard
                   key={tour.ID}
@@ -64,10 +113,29 @@ function UserDashboard() {
                   onClick={() => handleTourClick(tour.ID)}
                 />
               ))}
+
+              {purchasedTours.length > 0 ? (
+                purchasedTours.map((tour) => (
+                  <TourCard
+                    key={tour.huntId}
+                    tour={{
+                      ID: tour.huntId,
+                      name: tour.title,
+                      shortDescription: tour.shortDescription,
+                      imageUrl: tour.image,
+                    }}
+                    onClick={() => handleTourClick(tour.huntId)}
+                  />
+                ))
+              ) : (
+                <p>No Purchased Tours</p>
+              )}
+
             </div>
           </div>
 
           <div className="user-tours">
+
             <h3>Favorite Tours</h3>
             <div className="tours-list">
               {userData.favoriteTours.map((tour) => (
@@ -81,6 +149,29 @@ function UserDashboard() {
           </div>
         </div>
       <Footer />
+
+            <h3>Created Tours</h3>
+            <div className="tours-list">
+              {createdTours.length > 0 ? (
+                createdTours.map((tour) => (
+                  <TourCard
+                    key={tour.huntId}
+                    tour={{
+                      ID: tour.huntId,
+                      name: tour.title,
+                      shortDescription: tour.shortDescription,
+                      imageUrl: tour.image,
+                    }}
+                    onClick={() => handleTourClick(tour.huntId)}
+                  />
+                ))
+              ) : (
+                <p>No Created Tours</p>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
