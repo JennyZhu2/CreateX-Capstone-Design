@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import TourCard from '../../assets/TourCard';
 import './TourView.css';
 
@@ -47,38 +47,54 @@ function TourView() {
       });
   }, []);
 
-
   const handleStartHunt = (tourId) => {
     navigate(`/map/${tourId}`);
-  }; 
+  };
+
+  const handlePurchase = async (tourId) => {
+    try {
+      const response = await fetch("/api/purchase", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userId, tourId }),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        setOwned(true); // Update UI to reflect the purchased tour
+        alert(data.message);
+      } else {
+        alert(data.message);
+      }
+    } catch (error) {
+      console.error("Error purchasing tour:", error);
+      //alert("An error occurred while processing your purchase.");
+    }
+  };
 
   return (
     <div className="home-page">
       <button onClick={() => navigate(-1)} className="back-button">&lt;</button>
       <div className="tour-grid">
         {tours.map((tour) => (
-          <div>
+          <div key={tour.id}>
             <h1>{tour.title}</h1>
             <h2>{tour.shortDescription}</h2>
-            <img src={'../data/hunts/' + tour.image} alt={tour.name} className="img"/>
+            <img src={'../data/hunts/' + tour.image} alt={tour.name} className="img" />
             <h3>{tour.fullDescription}</h3>
             <h2>Here are the stops you'll visit along this tour</h2>
             {tour.missions.map((mission) => (
-              <h3>{mission.title}</h3>
-            ))
-            }
+              <h3 key={mission.title}>{mission.title}</h3>
+            ))}
             {owned ? (
-              <>
-                <button className='cta-button' onClick={() => handleStartHunt(tourId)}>Start Tour</button>
-              </>
+              <button className='cta-button' onClick={() => handleStartHunt(tourId)}>Start Tour</button>
             ) : (
-              <>
-                <button className='cta-button' onClick={() => handleStartHunt(tourId)}>Purchase</button>
-              </>
+              <button className='cta-button' onClick={() => handlePurchase(tourId)}>Purchase</button>
             )}
           </div>
-          ))
-        }
+        ))}
       </div>
     </div>
   );
