@@ -10,6 +10,7 @@ import Dashboard from "./pages/UserDashboard/UserDashboard";
 import Post from "./pages/PostingPage/PostingPage";
 import Tours from "./pages/Tours/Tours"
 import TourView from "./pages/TourView/TourView"
+import TourView_withhunt from "./pages/TourView_withhunt/TourView";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/post" element={<Post />} />
           <Route path="/tours" element={<Tours />} />
           <Route path="/view/:tourId" element={<TourView />} />
+          <Route path="/view_withhunt/:tourId" element={<TourView_withhunt />} />
         </Routes>
         <Footer />
       </Router>

@@ -35,7 +35,7 @@ function TourView() {
 
   const handleStartHunt = (huntId) => {
     navigate(`/map/${huntId}`);
-  }; 
+  };
 
   return (
     <div className="home-page">
@@ -52,7 +52,7 @@ function TourView() {
               <h3>{mission.title}</h3>
             ))
             }
-            <btn onClick={() => handleStartHunt()}>Purchase</btn>
+            <btn onClick={() => handleStartHunt(tour.huntId)}>Start Hunt</btn>
           </div>
           ))
         }

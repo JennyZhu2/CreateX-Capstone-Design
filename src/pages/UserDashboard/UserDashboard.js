@@ -1,40 +1,42 @@
 // src/pages/UserDashboard/UserDashboard.js
-import React from "react";
-import { useNavigate, Link } from "react-router-dom";
-import Footer from "../../assets/Footer";
-import "./UserDashboard.css";
+
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import Footer from '../../assets/Footer';
+import TourCard from '../../assets/TourCard';
+import './UserDashboard.css';
 
 function UserDashboard() {
   const navigate = useNavigate();
 
-  // Mock user data (hardcoded)
   const userData = {
-    profilePicture: "https://via.placeholder.com/150",
-    name: "John Doe",
-    username: "johndoe123",
-    email: "johndoe@example.com",
+    profilePicture: 'https://via.placeholder.com/150',
+    name: 'John Doe',
+    username: 'johndoe123',
+    email: 'johndoe@example.com',
     purchasedTours: [
-      { id: "1", name: "Historic City Tour" },
-      { id: "2", name: "Sunset Beach Tour" },
+      { ID: 'hunt001', name: 'Midtown Scavenger', imageUrl: 'images/midtown.jpg', shortDescription: 'Explore the hidden gems of Midtown with this exciting scavenger hunt!' },
+      { ID: 'hunt002', name: 'Piedmont Park Explorer', imageUrl: 'images/park.jpg', shortDescription: 'Discover the best spots in Piedmont Park with this exciting scavenger hunt!' },
+      { ID: 'hunt003', name: 'Inman Park Adventure', imageUrl: 'images/inman_park.jpg', shortDescription: 'Explore the charm and history of Inman Park with this engaging scavenger hunt!' },
     ],
     favoriteTours: [
-      { id: "3", name: "Downtown Exploration", link: "/map" },
-      { id: "4", name: "Cultural Food Tour" },
-    ],
-    downloadedTours: [
-      { id: "5", name: "Nature Walk" },
-      { id: "6", name: "Mountain Adventure" },
+      { ID: 'hunt003', name: 'Inman Park Adventure', imageUrl: 'images/inman_park.jpg', shortDescription: 'Explore the charm and history of Inman Park with this engaging scavenger hunt!' },
+      { ID: 'hunt004', name: 'Downtown Atlanta Discovery', imageUrl: 'images/park.jpg', shortDescription: 'Discover the heart of Atlanta with this exciting downtown scavenger hunt!' },
     ],
   };
 
-  // Navigate to the Posting Page
+
   const handlePostHunt = () => {
-    navigate("/post");
+    navigate('/post');
+  };
+
+  const handleTourClick = (tourID) => {
+    navigate(`/view_withhunt/${tourID}`);
   };
 
   return (
     <div>
-      <div className="dashboard-container">
+
         <div className="dashboard-header">
           <h1>User Dashboard</h1>
           <button className="post-hunt-button" onClick={handlePostHunt}>
@@ -42,7 +44,6 @@ function UserDashboard() {
           </button>
         </div>
 
-        {/* User Info */}
         <div className="user-profile">
           <div className="profile-picture">
             <img src={userData.profilePicture} alt="Profile" />
@@ -53,14 +54,15 @@ function UserDashboard() {
             <p>Email: {userData.email}</p>
           </div>
 
-          {/* Horizontally Scrollable Lists */}
           <div className="user-tours">
             <h3>Purchased Tours</h3>
             <div className="tours-list">
               {userData.purchasedTours.map((tour) => (
-                <div key={tour.id} className="tour-card">
-                  <h4>{tour.name}</h4>
-                </div>
+                <TourCard
+                  key={tour.ID}
+                  tour={tour}
+                  onClick={() => handleTourClick(tour.ID)}
+                />
               ))}
             </div>
           </div>
@@ -69,25 +71,15 @@ function UserDashboard() {
             <h3>Favorite Tours</h3>
             <div className="tours-list">
               {userData.favoriteTours.map((tour) => (
-                <Link to={tour.link} key={tour.id} className="tour-card">
-                  <h4>{tour.name}</h4>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className="user-tours">
-            <h3>Downloaded Tours</h3>
-            <div className="tours-list">
-              {userData.downloadedTours.map((tour) => (
-                <div key={tour.id} className="tour-card">
-                  <h4>{tour.name}</h4>
-                </div>
+                <TourCard
+                  key={tour.ID}
+                  tour={tour}
+                  onClick={() => handleTourClick(tour.ID)}
+                />
               ))}
             </div>
           </div>
         </div>
-      </div>
       <Footer />
     </div>
   );
