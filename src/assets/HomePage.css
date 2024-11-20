@@ -1,10 +1,12 @@
 /* src/assets/HomePage.css */
 
 .home-page {
-  max-width: 1200px;
+  width: auto;
   margin: 0 auto;
   padding: 20px;
   text-align: center;
+  background-color: #f1f1f1;
+  
 }
 
 .search-container {
@@ -28,9 +30,29 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
   gap: 20px;
   padding: 20px;
+  margin-bottom: 50px;
 }
 
 /* Center the header and add some spacing */
 h1 {
   margin-bottom: 20px;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-content: center;
+  text-align: center;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button:hover {
+  background-color: #337936;
 }

@@ -1,8 +1,8 @@
 .hero-container {
-    background-image: url('https://wallpapercave.com/wp/wp3594888.jpg'); /* Replace with our image URL */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://wallpapercave.com/wp/wp3594888.jpg'); /* Replace with our image URL */
     background-size: cover;
     background-position: center;
-    background-blend-mode: lighten;
+    background-blend-mode: darken;
     max-width: 100%;
     text-align: center;
     color: #ffffff;
@@ -10,13 +10,13 @@
   }
   
   .hero-container h1 {
-    background: rgb(0, 0, 0, 0.6);
+    color: #ffffff;
     font-size: 72px;
     margin-bottom: 20px;
   }
   
   .hero-container p {
-    background: rgb(0, 0, 0, 0.6);
+    color: #ffffff;
     font-size: 48px;
     margin-bottom: 40px;
   }

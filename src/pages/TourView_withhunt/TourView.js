@@ -33,8 +33,8 @@ function TourView() {
       });
   }, []);
 
-  const handleStartHunt = (huntId) => {
-    navigate(`/map/${huntId}`);
+  const handleStartHunt = (tourId) => {
+    navigate(`/map/${tourId}`);
   };
 
   return (

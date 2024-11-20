@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import TourCard from './TourCard';
+import HeroSection from "./HeroSection";
 import './HomePage.css';
 
 function HomePage() {
@@ -26,9 +27,8 @@ function HomePage() {
 
   return (
     <div className="home-page">
-
+      <HeroSection/>
       <h1>Featured Tours</h1>
-
       {/* Tour Grid */}
       <div className="tour-grid">
         {tours.length > 0 ? (
@@ -48,6 +48,9 @@ function HomePage() {
           <p>Loading tours...</p>
         )}
       </div>
+      <Link to="/tours">
+        <button className="cta-button">Search Tours</button>
+      </Link>
     </div>
   );
 }
