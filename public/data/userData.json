@@ -1,0 +1,20 @@
+[
+    {
+        "username": "test",
+        "password": "test",
+        "purchasedTours": [
+            "hunt001",
+            "hunt004",
+            "hunt007"
+        ]
+    },
+    {
+        "username": "admin",
+        "password": "admin",
+        "purchasedTours": [
+            "hunt002",
+            "hunt003",
+            "hunt009"
+        ]
+    }
+]
