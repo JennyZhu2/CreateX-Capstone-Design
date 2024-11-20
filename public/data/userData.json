@@ -2,6 +2,8 @@
     {
         "username": "test",
         "password": "test",
+        "name": "testing",
+        "email": "testing@testing",
         "purchasedTours": [
             "hunt001",
             "hunt004",
@@ -11,6 +13,8 @@
     {
         "username": "admin",
         "password": "admin",
+        "name": "admin",
+        "email": "admin@admin",
         "purchasedTours": [
             "hunt002",
             "hunt003",
