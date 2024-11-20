@@ -1,22 +1,18 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function MapPage() {
   const mapRef = useRef(null);
   const googleMapRef = useRef(null);
+  const navigate = useNavigate();
   const [huntData, setHuntData] = useState(null);
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
   const [completedMissions, setCompletedMissions] = useState([]);
   const [locationWatcher, setLocationWatcher] = useState(null);
+  const [inputError, setInputError] = useState('');
   const { tourId } = useParams();
-  let infoWindow
   
-  const handleCompleteTask = (index) => {
-    if (!completedMissions.includes(index)) {
-      setCompletedMissions((prev) => [...prev, index]);
-    }
-  };
 
   // Load hunt data
   useEffect(() => {
@@ -92,7 +88,7 @@ function MapPage() {
           // InfoWindow content for each marker
           const contentString = `
           <div style="max-width: 300px; font-family: Arial, sans-serif;">
-            <h3 style="margin: 0; color: #333;">Task ${mission.title}</h3>
+            <h3 style="margin: 0; color: #333;">${mission.title}</h3>
             <p style="margin: 5px 0; font-size: 14px; color: #555;">
               <strong>Hint:</strong> ${mission.hint}
             </p>
@@ -170,7 +166,7 @@ function MapPage() {
               // Update marker and map position
               userMarker.setPosition(pos);
               mapRef.current.setCenter(pos);
-              
+
               mapRef.current.panTo(pos);
             });
           } else {
@@ -215,6 +211,16 @@ function MapPage() {
     return <p>Loading scavenger hunt data...</p>;
   }
 
+
+  const handleCheckLocation = (inputValue, missionLocation, index) => {
+    if (inputValue.toLowerCase() === missionLocation.toLowerCase()) {
+      setCompletedMissions((prev) => [...prev, index]);
+      setInputError(''); // Clear error on success
+    } else {
+      setInputError('Try Again');
+    }
+  };
+
   return (
     <div style={{ display: "flex", height: "100vh" }}>
       {/* Sidebar */}
@@ -231,7 +237,7 @@ function MapPage() {
         <h3>
           Progress: {completedMissions.length} / {huntData.missions.length}
         </h3>
-  
+
         {/* Missions List */}
         {huntData.missions.map((mission, index) => (
           <div
@@ -246,38 +252,55 @@ function MapPage() {
           >
             {/* Mission Title */}
             <h4
-              style={{ cursor: "pointer", color: "blue" }}
+              style={{ cursor: "pointer", color: "#4285F4" }}
               onClick={() => panToMission(mission)}
             >
-            <strong>Task {mission.step}: </strong>
-              <Link to={`/post`}>{mission.title}</Link>
+              <strong>Task {mission.step}: {mission.title}</strong>
             </h4>
             {/* Mission Short Description */}
             <p>{mission.shortDescription}</p>
-  
+
             {/* Task Completion */}
             {completedMissions.includes(index) ? (
               <p style={{ color: "green", fontWeight: "bold" }}>Task Completed!</p>
             ) : (
-              <button
-                onClick={() => handleCompleteTask(index)}
-                style={{
-                  padding: "5px 10px",
-                  backgroundColor: "#4CAF50",
-                  color: "#fff",
-                  border: "none",
-                  borderRadius: "4px",
-                  cursor: "pointer",
-                  marginTop: "10px",
-                }}
-              >
-                Mark as Complete
-              </button>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Check secret location"
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      handleCheckLocation(e.target.value, mission.location, index);
+                      e.target.value = ""; // Clear input after submission
+                    }
+                  }}
+                  style={{
+                    width: "90%",
+                    padding: "8px",
+                    marginTop: "10px",
+                    borderRadius: "4px",
+                    border: inputError ? "1px solid #ff0000" : "1px solid #ddd",
+                  }}
+                />
+                {inputError && (
+                  <p style={{ 
+                    color: "#ff0000", 
+                    marginTop: "5px", 
+                    fontSize: "12px",
+                    marginBottom: "0"
+                  }}>
+                    {inputError}
+                  </p>
+                )}
+                <p style={{ color: "grey", marginTop: "5px", fontSize: "12px" }}>
+                  Press Enter to Submit
+                </p>
+              </div>
             )}
           </div>
         ))}
       </div>
-  
+
       {/* Map Container */}
       <div
         ref={googleMapRef}
@@ -288,6 +311,6 @@ function MapPage() {
       />
     </div>
   );
-}  
+}
 
 export default MapPage;
