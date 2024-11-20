@@ -11,9 +11,10 @@
     "missions": [
         {
             "step": 1,
+            "location": "Getty Ring",
             "title": "The Coca-Cola Roxy",
             "shortDescription": "Start your journey at the iconic Coca-Cola Roxy theater.",
-            "hint": "Hint: Look for the venue known for hosting concerts and events.",
+            "hint": "Look for the venue known for hosting concerts and events.",
             "coordinates": {
                 "lat": 33.8913,
                 "lng": -84.4678
@@ -21,9 +22,10 @@
         },
         {
             "step": 2,
+            "location": "Getty Ring",
             "title": "Truist Park Plaza",
             "shortDescription": "Visit the lively plaza outside Truist Park.",
-            "hint": "Hint: This spot is bustling with fans during Braves games.",
+            "hint": "This spot is bustling with fans during Braves games.",
             "coordinates": {
                 "lat": 33.8905,
                 "lng": -84.4665
@@ -31,9 +33,10 @@
         },
         {
             "step": 3,
+            "location": "Getty Ring",
             "title": "Terrapin Taproom",
             "shortDescription": "Grab a refreshment at Terrapin Taproom.",
-            "hint": "Hint: Look for the bar known for its craft beer and tasty bites.",
+            "hint": "Look for the bar known for its craft beer and tasty bites.",
             "coordinates": {
                 "lat": 33.8899,
                 "lng": -84.4669
@@ -41,9 +44,10 @@
         },
         {
             "step": 4,
+            "location": "Getty Ring",
             "title": "The Battery Fountain",
             "shortDescription": "Take a photo by the beautiful fountain in the heart of the Battery.",
-            "hint": "Hint: This fountain lights up beautifully at night.",
+            "hint": "This fountain lights up beautifully at night.",
             "coordinates": {
                 "lat": 33.8910,
                 "lng": -84.4672
@@ -51,9 +55,10 @@
         },
         {
             "step": 5,
+            "location": "Getty Ring",
             "title": "Punch Bowl Social",
             "shortDescription": "End your hunt with some fun at Punch Bowl Social.",
-            "hint": "Hint: Look for the entertainment spot with bowling, arcade games, and great food.",
+            "hint": "Look for the entertainment spot with bowling, arcade games, and great food.",
             "coordinates": {
                 "lat": 33.8903,
                 "lng": -84.4675

@@ -11,9 +11,10 @@
     "missions": [
         {
             "step": 1,
+            "location": "Getty Ring",
             "title": "The Shops Buckhead Atlanta",
             "shortDescription": "Begin your journey at The Shops Buckhead Atlanta, a hub of luxury shopping and dining.",
-            "hint": "Hint: Look for the area filled with upscale boutiques and designer brands.",
+            "hint": "Look for the area filled with upscale boutiques and designer brands.",
             "coordinates": {
                 "lat": 33.8378,
                 "lng": -84.3823
@@ -21,9 +22,10 @@
         },
         {
             "step": 2,
+            "location": "Getty Ring",
             "title": "Atlanta History Center",
             "shortDescription": "Learn about Atlanta's past at the renowned Atlanta History Center.",
-            "hint": "Hint: This spot features the Swan House and beautiful gardens.",
+            "hint": "This spot features the Swan House and beautiful gardens.",
             "coordinates": {
                 "lat": 33.8418,
                 "lng": -84.3855
@@ -31,9 +33,10 @@
         },
         {
             "step": 3,
+            "location": "Getty Ring",
             "title": "Chastain Park",
             "shortDescription": "Take a stroll through Chastain Park, one of Buckhead’s largest green spaces.",
-            "hint": "Hint: Look for the park with jogging trails, picnic areas, and an amphitheater.",
+            "hint": "Look for the park with jogging trails, picnic areas, and an amphitheater.",
             "coordinates": {
                 "lat": 33.8788,
                 "lng": -84.3964
@@ -41,9 +44,10 @@
         },
         {
             "step": 4,
+            "location": "Getty Ring",
             "title": "Lenox Square Mall",
             "shortDescription": "Visit the iconic Lenox Square Mall, a staple of Buckhead shopping.",
-            "hint": "Hint: Look for the bustling mall with a mix of high-end and popular stores.",
+            "hint": "Look for the bustling mall with a mix of high-end and popular stores.",
             "coordinates": {
                 "lat": 33.8463,
                 "lng": -84.3627
@@ -51,9 +55,10 @@
         },
         {
             "step": 5,
+            "location": "Getty Ring",
             "title": "Buckhead Diner",
             "shortDescription": "End your adventure with a meal at the classic Buckhead Diner.",
-            "hint": "Hint: This spot is known for its retro vibe and delicious comfort food.",
+            "hint": "This spot is known for its retro vibe and delicious comfort food.",
             "coordinates": {
                 "lat": 33.8436,
                 "lng": -84.3756

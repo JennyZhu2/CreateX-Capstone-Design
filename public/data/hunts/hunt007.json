@@ -11,9 +11,10 @@
     "missions": [
         {
             "step": 1,
+            "location": "Getty Ring",
             "title": "Dancing Goats Coffee Bar",
             "shortDescription": "Start your tour at Dancing Goats Coffee Bar, known for its signature brews.",
-            "hint": "Hint: Look for a spot with a cozy patio and delicious lattes in Ponce City Market.",
+            "hint": "Look for a spot with a cozy patio and delicious lattes in Ponce City Market.",
             "coordinates": {
                 "lat": 33.7726,
                 "lng": -84.3657
@@ -21,9 +22,10 @@
         },
         {
             "step": 2,
+            "location": "Getty Ring",
             "title": "Chattahoochee Coffee Company",
             "shortDescription": "Visit this hidden gem with stunning views of the Chattahoochee River.",
-            "hint": "Hint: This café is tucked away in an apartment complex but worth the visit for its serene riverside vibe.",
+            "hint": "This café is tucked away in an apartment complex but worth the visit for its serene riverside vibe.",
             "coordinates": {
                 "lat": 33.8761,
                 "lng": -84.4446
@@ -31,9 +33,10 @@
         },
         {
             "step": 3,
+            "location": "Getty Ring",
             "title": "Brash Coffee",
             "shortDescription": "Stop by Brash Coffee for a minimalist coffee experience.",
-            "hint": "Hint: Located in a repurposed shipping container in the heart of Westside Provisions District.",
+            "hint": "Located in a repurposed shipping container in the heart of Westside Provisions District.",
             "coordinates": {
                 "lat": 33.7862,
                 "lng": -84.4117
@@ -41,9 +44,10 @@
         },
         {
             "step": 4,
+            "location": "Getty Ring",
             "title": "Chrome Yellow Trading Co.",
             "shortDescription": "Enjoy artisanal coffee and chill vibes at Chrome Yellow.",
-            "hint": "Hint: Look for a hip coffee spot with minimalist décor in the Old Fourth Ward.",
+            "hint": "Look for a hip coffee spot with minimalist décor in the Old Fourth Ward.",
             "coordinates": {
                 "lat": 33.7618,
                 "lng": -84.3756
@@ -51,9 +55,10 @@
         },
         {
             "step": 5,
+            "location": "Getty Ring",
             "title": "Revelator Coffee Company",
             "shortDescription": "End your café crawl at Revelator Coffee, known for its modern aesthetics and exceptional brews.",
-            "hint": "Hint: This café is located in Downtown Atlanta and is a favorite among locals.",
+            "hint": "This café is located in Downtown Atlanta and is a favorite among locals.",
             "coordinates": {
                 "lat": 33.7685,
                 "lng": -84.3872

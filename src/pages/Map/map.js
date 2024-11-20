@@ -221,6 +221,12 @@ function MapPage() {
     }
   };
 
+  const handleLearnMore = (mission) => {
+    navigate(`/tour/${tourId}/mission/${mission.step}`, { 
+      state: { mission } 
+    });
+  };
+
   return (
     <div style={{ display: "flex", height: "100vh" }}>
       {/* Sidebar */}
@@ -262,7 +268,27 @@ function MapPage() {
 
             {/* Task Completion */}
             {completedMissions.includes(index) ? (
-              <p style={{ color: "green", fontWeight: "bold" }}>Task Completed!</p>
+              <>
+                <p style={{ color: "green", fontWeight: "bold" }}>Task Completed!</p>
+                {/* Learn More Button */}
+                <button
+                  onClick={() => handleLearnMore(mission)}
+                  style={{
+                    backgroundColor: "#4285F4",
+                    color: "white",
+                    border: "none",
+                    padding: "8px 16px",
+                    borderRadius: "4px",
+                    cursor: "pointer",
+                    marginTop: "10px",
+                    transition: "background-color 0.3s ease"
+                  }}
+                  onMouseOver={(e) => e.target.style.backgroundColor = "#3367D6"}
+                  onMouseOut={(e) => e.target.style.backgroundColor = "#4285F4"}
+                >
+                  Learn More
+                </button>
+              </>
             ) : (
               <div>
                 <input

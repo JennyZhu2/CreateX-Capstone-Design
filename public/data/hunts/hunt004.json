@@ -11,9 +11,10 @@
     "missions": [
         {
             "step": 1,
+            "location": "Getty Park",
             "title": "Centennial Olympic Park",
             "shortDescription": "Begin your adventure at Atlanta's iconic Centennial Olympic Park.",
-            "hint": "Hint: Look for the fountains that honor the 1996 Olympic Games.",
+            "hint": "Look for the fountains that honor the 1996 Olympic Games.",
             "coordinates": {
                 "lat": 33.7603,
                 "lng": -84.3935
@@ -21,9 +22,10 @@
         },
         {
             "step": 2,
+            "location": "Getty Ring",
             "title": "World of Coca-Cola",
             "shortDescription": "Visit the World of Coca-Cola to learn about the history of this famous beverage.",
-            "hint": "Hint: Find the building with a giant Coca-Cola bottle out front.",
+            "hint": "Find the building with a giant Coca-Cola bottle out front.",
             "coordinates": {
                 "lat": 33.7628,
                 "lng": -84.3927
@@ -31,9 +33,10 @@
         },
         {
             "step": 3,
+            "location": "Getty Ring",
             "title": "SkyView Atlanta",
             "shortDescription": "Take a ride on SkyView Atlanta, the downtown Ferris wheel.",
-            "hint": "Hint: Look for the towering Ferris wheel that offers panoramic views of the city.",
+            "hint": "Look for the towering Ferris wheel that offers panoramic views of the city.",
             "coordinates": {
                 "lat": 33.7573,
                 "lng": -84.3911
@@ -41,9 +44,10 @@
         },
         {
             "step": 4,
+            "location": "Getty Ring",
             "title": "Georgia State Capitol",
             "shortDescription": "Explore the historic Georgia State Capitol building.",
-            "hint": "Hint: This building has a distinctive gold dome and is the seat of Georgia's government.",
+            "hint": "This building has a distinctive gold dome and is the seat of Georgia's government.",
             "coordinates": {
                 "lat": 33.7490,
                 "lng": -84.3880
@@ -51,9 +55,10 @@
         },
         {
             "step": 5,
+            "location": "Getty Ring",
             "title": "Sweet Auburn Curb Market",
             "shortDescription": "End your hunt with a bite at the Sweet Auburn Curb Market.",
-            "hint": "Hint: Look for the vibrant indoor market that offers diverse food and goods.",
+            "hint": "Look for the vibrant indoor market that offers diverse food and goods.",
             "coordinates": {
                 "lat": 33.7522,
                 "lng": -84.3797

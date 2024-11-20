@@ -11,9 +11,10 @@
     "missions": [
         {
             "step": 1,
+            "location": "Getty Ring",
             "title": "Trap Music Museum",
             "shortDescription": "Start your journey at the Trap Music Museum, dedicated to Atlanta's iconic hip-hop subgenre.",
-            "hint": "Hint: Look for a museum filled with immersive exhibits and tributes to trap legends.",
+            "hint": "Look for a museum filled with immersive exhibits and tributes to trap legends.",
             "coordinates": {
                 "lat": 33.7862,
                 "lng": -84.4146
@@ -21,9 +22,10 @@
         },
         {
             "step": 2,
+            "location": "Getty Ring",
             "title": "Castleberry Hill Murals",
             "shortDescription": "Discover the hip-hop-inspired street art in the Castleberry Hill district.",
-            "hint": "Hint: Look for colorful murals featuring tributes to Atlanta's music icons.",
+            "hint": "Look for colorful murals featuring tributes to Atlanta's music icons.",
             "coordinates": {
                 "lat": 33.7476,
                 "lng": -84.4050
@@ -31,9 +33,10 @@
         },
         {
             "step": 3,
+            "location": "Getty Ring",
             "title": "Stankonia Studios",
             "shortDescription": "Visit the legendary Stankonia Studios, home to OutKast and countless Atlanta hits.",
-            "hint": "Hint: Look for the studio that helped shape the Southern hip-hop sound.",
+            "hint": "Look for the studio that helped shape the Southern hip-hop sound.",
             "coordinates": {
                 "lat": 33.7984,
                 "lng": -84.3957
@@ -41,9 +44,10 @@
         },
         {
             "step": 4,
+            "location": "Getty Ring",
             "title": "ATL Mural - 'Welcome to Atlanta'",
             "shortDescription": "Stop by the iconic 'Welcome to Atlanta' mural that honors the city's hip-hop legacy.",
-            "hint": "Hint: Look for the massive mural near the Edgewood Avenue district.",
+            "hint": "Look for the massive mural near the Edgewood Avenue district.",
             "coordinates": {
                 "lat": 33.7546,
                 "lng": -84.3746
@@ -51,9 +55,10 @@
         },
         {
             "step": 5,
+            "location": "Getty Ring",
             "title": "Magic City",
             "shortDescription": "End your tour at Magic City, a cultural landmark that shaped Atlanta’s hip-hop scene.",
-            "hint": "Hint: Known for its connection to hip-hop music videos and legendary performances.",
+            "hint": "Known for its connection to hip-hop music videos and legendary performances.",
             "coordinates": {
                 "lat": 33.7527,
                 "lng": -84.3915
