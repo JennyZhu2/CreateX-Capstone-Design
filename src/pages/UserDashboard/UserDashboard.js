@@ -8,33 +8,35 @@ import "./UserDashboard.css";
 
 function UserDashboard() {
   const [purchasedTours, setPurchasedTours] = useState([]);
+  const [favoriteTours, setFavoriteTours] = useState([]);
   const [createdTours, setCreatedTours] = useState([]);
+  const [userData, setUserData] = useState([]);
   const userId = localStorage.getItem("userId");
   const navigate = useNavigate();
 
 
-  const userData = {
-    profilePicture: 'https://via.placeholder.com/150',
-    name: 'John Doe',
-    username: 'johndoe123',
-    email: 'johndoe@example.com',
-    purchasedTours: [
-      { ID: 'hunt001', name: 'Midtown Scavenger', imageUrl: 'images/midtown.jpg', shortDescription: 'Explore the hidden gems of Midtown with this exciting scavenger hunt!' },
-      { ID: 'hunt002', name: 'Piedmont Park Explorer', imageUrl: 'images/park.jpg', shortDescription: 'Discover the best spots in Piedmont Park with this exciting scavenger hunt!' },
-      { ID: 'hunt003', name: 'Inman Park Adventure', imageUrl: 'images/inman_park.jpg', shortDescription: 'Explore the charm and history of Inman Park with this engaging scavenger hunt!' },
-    ],
-    favoriteTours: [
-      { ID: 'hunt003', name: 'Inman Park Adventure', imageUrl: 'images/inman_park.jpg', shortDescription: 'Explore the charm and history of Inman Park with this engaging scavenger hunt!' },
-      { ID: 'hunt004', name: 'Downtown Atlanta Discovery', imageUrl: 'images/park.jpg', shortDescription: 'Discover the heart of Atlanta with this exciting downtown scavenger hunt!' },
-    ],
-  };
+  // const userData = {
+  //   profilePicture: 'https://via.placeholder.com/150',
+  //   name: 'John Doe',
+  //   username: 'johndoe123',
+  //   email: 'johndoe@example.com',
+  //   purchasedTours: [
+  //     { ID: 'hunt001', name: 'Midtown Scavenger', imageUrl: 'images/midtown.jpg', shortDescription: 'Explore the hidden gems of Midtown with this exciting scavenger hunt!' },
+  //     { ID: 'hunt002', name: 'Piedmont Park Explorer', imageUrl: 'images/park.jpg', shortDescription: 'Discover the best spots in Piedmont Park with this exciting scavenger hunt!' },
+  //     { ID: 'hunt003', name: 'Inman Park Adventure', imageUrl: 'images/inman_park.jpg', shortDescription: 'Explore the charm and history of Inman Park with this engaging scavenger hunt!' },
+  //   ],
+  //   favoriteTours: [
+  //     { ID: 'hunt003', name: 'Inman Park Adventure', imageUrl: 'images/inman_park.jpg', shortDescription: 'Explore the charm and history of Inman Park with this engaging scavenger hunt!' },
+  //     { ID: 'hunt004', name: 'Downtown Atlanta Discovery', imageUrl: 'images/park.jpg', shortDescription: 'Discover the heart of Atlanta with this exciting downtown scavenger hunt!' },
+  //   ],
+  // };
 
   // Fetch the user data
   useEffect(() => {
     fetch(`./data/${userId}.json`)
       .then((response) => response.json())
       .then((data) => {
-        setData(data);
+        setUserData(data);
       })
       .catch((error) => {
         console.error('Failed to fetch user001.json:', error);
@@ -52,7 +54,10 @@ function UserDashboard() {
           const created = tours.filter((tour) =>
             userData.created.includes(tour.huntId)
           );
-
+          const favorited = tours.filter((tour) =>
+            userData.favorited.includes(tour.huntId)
+          );
+          setFavoriteTours(favorited);
           setPurchasedTours(purchased);
           setCreatedTours(created);
         })
@@ -96,13 +101,13 @@ function UserDashboard() {
             <h3>Purchased Tours</h3>
             <div className="tours-list">
 
-              {userData.purchasedTours.map((tour) => (
+              {/* {userData.purchasedTours.map((tour) => (
                 <TourCard
                   key={tour.ID}
                   tour={tour}
                   onClick={() => handleTourClick(tour.ID)}
                 />
-              ))}
+              ))} */}
 
               {purchasedTours.length > 0 ? (
                 purchasedTours.map((tour) => (
@@ -128,13 +133,29 @@ function UserDashboard() {
 
             <h3>Favorite Tours</h3>
             <div className="tours-list">
-              {userData.favoriteTours.map((tour) => (
+            {favoriteTours.length > 0 ? (
+                favoriteTours.map((tour) => (
+                  <TourCard
+                    key={tour.huntId}
+                    tour={{
+                      ID: tour.huntId,
+                      name: tour.title,
+                      shortDescription: tour.shortDescription,
+                      imageUrl: tour.image,
+                    }}
+                    onClick={() => handleTourClick(tour.huntId)}
+                  />
+                ))
+              ) : (
+                <p>No Favorited Tours</p>
+              )}
+              {/* {userData.favoriteTours.map((tour) => (
                 <TourCard
                   key={tour.ID}
                   tour={tour}
                   onClick={() => handleTourClick(tour.ID)}
                 />
-              ))}
+              ))} */}
             </div>
           </div>
         </div>
