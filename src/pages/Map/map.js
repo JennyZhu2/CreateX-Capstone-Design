@@ -14,6 +14,7 @@ function MapPage() {
     }
   };
   const { tourId } = useParams();
+  
 
   // Load hunt data
   useEffect(() => {
@@ -65,8 +66,8 @@ function MapPage() {
           zoom: 15,
         });
 
-        // Add markers and circles
         huntData.missions.forEach(mission => {
+          // Add markers and circles
           const marker = new window.google.maps.Marker({
             position: mission.coordinates,
             map: mapRef.current,
@@ -84,31 +85,23 @@ function MapPage() {
             strokeWeight: 2,
           });
 
+          // InfoWindow content for each marker
+          const contentString = `
+          <div style="max-width: 300px; font-family: Arial, sans-serif;">
+            <h3 style="margin: 0; color: #333;">Task ${mission.step}: ${mission.title}</h3>
+            <p style="margin: 5px 0; font-size: 14px; color: #555;">
+              <strong>Hint:</strong> ${mission.hint}
+            </p>
+          </div>
+          `;
+
+          const infoWindow = new window.google.maps.InfoWindow({
+            content: contentString,
+          });
+
+          // Add click event to open the InfoWindow
           marker.addListener("click", () => {
-            const modal = document.getElementById("custom-alert");
-            const title = document.getElementById("modal-title");
-            const text = document.getElementById("modal-text");
-            const closeButton = document.querySelector(".close-btn");
-
-            title.textContent = `Mission: ${mission.title}`;
-            text.textContent = `${mission.shortDescription}\n\nHint: ${mission.hint}`;
-            modal.classList.remove("hidden");
-
-            const closeModal = () => {
-              modal.classList.add("hidden");
-              // Clean up listeners
-              closeButton.removeEventListener("click", closeModal);
-              window.removeEventListener("click", outsideClickHandler);
-            };
-
-            const outsideClickHandler = (e) => {
-              if (e.target === modal) {
-                closeModal();
-              }
-            };
-
-            closeButton.addEventListener("click", closeModal);
-            window.addEventListener("click", outsideClickHandler);
+            infoWindow.open(mapRef.current, marker);
           });
         });
       }
@@ -162,6 +155,7 @@ function MapPage() {
               style={{ cursor: "pointer", color: "blue" }}
               onClick={() => panToMission(mission)}
             >
+            <strong>Task {mission.step}: </strong>
               <Link to={`/post`}>{mission.title}</Link>
             </h4>
             {/* Mission Short Description */}
