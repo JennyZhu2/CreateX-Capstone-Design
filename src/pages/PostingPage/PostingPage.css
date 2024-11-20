@@ -1,25 +1,151 @@
-/* src/pages/PostingPage/PostingPage.css */
-.posting-container {
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
+/* General Container Styling */
+form {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.submit-button {
+  background-color: #28a745;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+}
+
+.toggle-button {
+  background-color: #008080;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.toggle-button:hover {
+  background-color: #005757;
+}
+
+/* Mission Section */
+.mission-card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+}
+
+.mission-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mission-header h4 {
+  margin: 0;
+}
+
+.mission-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.mission-container h3 {
+  color: #444;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.mission-container label {
+  margin-bottom: 6px;
+}
+
+.mission-content {
+  margin-top: 10px;
+}
+
+.mission-card textarea {
+  width: 100%;
+  min-height: 60px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+
+input[type="number"] {
+  width: calc(50% - 10px);
+  display: inline-block;
+  margin-right: 10px;
+}
+
+input[type="number"]:last-child {
+  margin-right: 0;
+}
+
+/* Form Styling for Responsiveness */
+@media (max-width: 768px) {
+  input[type="number"] {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
   }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
+
   button {
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #4285F4;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    width: 100%;
   }
-  
-  button:hover {
-    background-color: #236cea;
-  }  
+}
