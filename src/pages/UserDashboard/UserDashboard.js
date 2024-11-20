@@ -1,20 +1,12 @@
 // src/pages/UserDashboard/UserDashboard.js
-
-
 import React, { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
 import Footer from '../../assets/Footer';
-import TourCard from '../../assets/TourCard';
-import './UserDashboard.css';
-
-import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import TourCard from "../../assets/TourCard";
 import "./UserDashboard.css";
 
 
 function UserDashboard() {
-  const [userData, setData] = useState([]);
   const [purchasedTours, setPurchasedTours] = useState([]);
   const [createdTours, setCreatedTours] = useState([]);
   const userId = localStorage.getItem("userId");
@@ -79,101 +71,170 @@ function UserDashboard() {
     navigate(`/view_withhunt/${tourID}`);
   };
 
-  const handleTourClick = (huntId) => {
-    navigate(`/view/${huntId}`);
-  }
+<div>
+  <div className="dashboard-header">
+    <h1>User Dashboard</h1>
+    <button className="post-hunt-button" onClick={handlePostHunt}>
+      Post Hunt
+    </button>
+  </div>
 
-  return (
-    <div>
+  <div className="user-profile">
+    <div className="profile-picture">
+      <img src={userData.profilePicture} alt="Profile" />
+    </div>
+    <div className="user-info">
+      <h2>{userData.name}</h2>
+      <p>Email: {userData.email}</p>
+    </div>
 
-        <div className="dashboard-header">
-          <h1>User Dashboard</h1>
-          <button className="post-hunt-button" onClick={handlePostHunt}>
-            Post Hunt
-          </button>
-        </div>
-
-        <div className="user-profile">
-          <div className="profile-picture">
-            <img src={userData.profilePicture} alt="Profile" />
-          </div>
-          <div className="user-info">
-            <h2>{userData.name}</h2>
-            <p>Email: {userData.email}</p>
-          </div>
-
-          <div className="user-tours">
-            <h3>Purchased Tours</h3>
-            <div className="tours-list">
-
-              {userData.purchasedTours.map((tour) => (
-                <TourCard
-                  key={tour.ID}
-                  tour={tour}
-                  onClick={() => handleTourClick(tour.ID)}
-                />
-              ))}
-
-              {purchasedTours.length > 0 ? (
-                purchasedTours.map((tour) => (
-                  <TourCard
-                    key={tour.huntId}
-                    tour={{
-                      ID: tour.huntId,
-                      name: tour.title,
-                      shortDescription: tour.shortDescription,
-                      imageUrl: tour.image,
-                    }}
-                    onClick={() => handleTourClick(tour.huntId)}
-                  />
-                ))
-              ) : (
-                <p>No Purchased Tours</p>
-              )}
-
-            </div>
-          </div>
-
-          <div className="user-tours">
-
-            <h3>Favorite Tours</h3>
-            <div className="tours-list">
-              {userData.favoriteTours.map((tour) => (
-                <TourCard
-                  key={tour.ID}
-                  tour={tour}
-                  onClick={() => handleTourClick(tour.ID)}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      <Footer />
-
-            <h3>Created Tours</h3>
-            <div className="tours-list">
-              {createdTours.length > 0 ? (
-                createdTours.map((tour) => (
-                  <TourCard
-                    key={tour.huntId}
-                    tour={{
-                      ID: tour.huntId,
-                      name: tour.title,
-                      shortDescription: tour.shortDescription,
-                      imageUrl: tour.image,
-                    }}
-                    onClick={() => handleTourClick(tour.huntId)}
-                  />
-                ))
-              ) : (
-                <p>No Created Tours</p>
-              )}
-            </div>
-          </div>
-        </div>
+    <div className="user-tours">
+      <h3>Purchased Tours</h3>
+      <div className="tours-list">
+        {userData.purchasedTours.length > 0 ? (
+          userData.purchasedTours.map((tour) => (
+            <TourCard
+              key={tour.ID}
+              tour={tour}
+              onClick={() => handleTourClick(tour.ID)}
+            />
+          ))
+        ) : (
+          <p>No Purchased Tours</p>
+        )}
       </div>
     </div>
-  );
+
+    <div className="user-tours">
+      <h3>Favorite Tours</h3>
+      <div className="tours-list">
+        {userData.favoriteTours.length > 0 ? (
+          userData.favoriteTours.map((tour) => (
+            <TourCard
+              key={tour.ID}
+              tour={tour}
+              onClick={() => handleTourClick(tour.ID)}
+            />
+          ))
+        ) : (
+          <p>No Favorite Tours</p>
+        )}
+      </div>
+    </div>
+  </div>
+
+  <h3>Created Tours</h3>
+  <div className="tours-list">
+    {createdTours.length > 0 ? (
+      createdTours.map((tour) => (
+        <TourCard
+          key={tour.huntId}
+          tour={{
+            ID: tour.huntId,
+            name: tour.title,
+            shortDescription: tour.shortDescription,
+            imageUrl: tour.image,
+          }}
+          onClick={() => handleTourClick(tour.huntId)}
+        />
+      ))
+    ) : (
+      <p>No Created Tours</p>
+    )}
+  </div>
+
+  <Footer />
+</div>
+
+  // return (
+  //   <div>
+  //       <div className="dashboard-header">
+  //         <h1>User Dashboard</h1>
+  //         <button className="post-hunt-button" onClick={handlePostHunt}>
+  //           Post Hunt
+  //         </button>
+  //       </div>
+
+  //       <div className="user-profile">
+  //         <div className="profile-picture">
+  //           <img src={userData.profilePicture} alt="Profile" />
+  //         </div>
+  //         <div className="user-info">
+  //           <h2>{userData.name}</h2>
+  //           <p>Email: {userData.email}</p>
+  //         </div>
+
+  //         <div className="user-tours">
+  //           <h3>Purchased Tours</h3>
+  //           <div className="tours-list">
+
+  //             {userData.purchasedTours.map((tour) => (
+  //               <TourCard
+  //                 key={tour.ID}
+  //                 tour={tour}
+  //                 onClick={() => handleTourClick(tour.ID)}
+  //               />
+  //             ))}
+
+  //             {purchasedTours.length > 0 ? (
+  //               purchasedTours.map((tour) => (
+  //                 <TourCard
+  //                   key={tour.huntId}
+  //                   tour={{
+  //                     ID: tour.huntId,
+  //                     name: tour.title,
+  //                     shortDescription: tour.shortDescription,
+  //                     imageUrl: tour.image,
+  //                   }}
+  //                   onClick={() => handleTourClick(tour.huntId)}
+  //                 />
+  //               ))
+  //             ) : (
+  //               <p>No Purchased Tours</p>
+  //             )}
+
+  //           </div>
+  //         </div>
+
+  //         <div className="user-tours">
+
+  //           <h3>Favorite Tours</h3>
+  //           <div className="tours-list">
+  //             {userData.favoriteTours.map((tour) => (
+  //               <TourCard
+  //                 key={tour.ID}
+  //                 tour={tour}
+  //                 onClick={() => handleTourClick(tour.ID)}
+  //               />
+  //             ))}
+  //           </div>
+  //         </div>
+  //       </div>
+      
+  //       <Footer />
+  //           <h3>Created Tours</h3>
+  //           <div className="tours-list">
+  //             {createdTours.length > 0 ? (
+  //               createdTours.map((tour) => (
+  //                 <TourCard
+  //                   key={tour.huntId}
+  //                   tour={{
+  //                     ID: tour.huntId,
+  //                     name: tour.title,
+  //                     shortDescription: tour.shortDescription,
+  //                     imageUrl: tour.image,
+  //                   }}
+  //                   onClick={() => handleTourClick(tour.huntId)}
+  //                 />
+  //               ))
+  //             ) : (
+  //               <p>No Created Tours</p>
+  //             )}
+  //           </div>
+  //         </div>
+        
+      
+  // );
 }
 
 export default UserDashboard;
