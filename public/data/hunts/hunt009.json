@@ -11,6 +11,7 @@
     "missions": [
         {
             "step": 1,
+            "location": "Getty Ring",
             "title": "Ponce City Market Entrance",
             "shortDescription": "Start your journey at the bustling Ponce City Market BeltLine entrance.",
             "hint": "Hint: Look for the popular spot where shopping, dining, and trails meet.",
@@ -21,6 +22,7 @@
         },
         {
             "step": 2,
+            "location": "Getty Ring",
             "title": "Historic Fourth Ward Park",
             "shortDescription": "Take a stroll through the beautiful Historic Fourth Ward Park.",
             "hint": "Hint: Look for a serene green space with a pond and amphitheater along the BeltLine.",
@@ -31,6 +33,7 @@
         },
         {
             "step": 3,
+            "location": "Getty Ring",
             "title": "Krog Street Tunnel",
             "shortDescription": "Check out the vibrant street art at Krog Street Tunnel.",
             "hint": "Hint: Find the tunnel where Atlanta's graffiti scene comes alive.",
@@ -41,6 +44,7 @@
         },
         {
             "step": 4,
+            "location": "Getty Ring",
             "title": "Old Fourth Ward Skatepark",
             "shortDescription": "Visit the lively Old Fourth Ward Skatepark.",
             "hint": "Hint: Look for a hub of activity with skaters and a connection to the BeltLine.",
@@ -51,6 +55,7 @@
         },
         {
             "step": 5,
+            "location": "Getty Ring",
             "title": "The BeltLine Arboretum",
             "shortDescription": "Explore the lush greenery and educational exhibits at the BeltLine Arboretum.",
             "hint": "Hint: Look for an area showcasing native plants along the Eastside Trail.",
@@ -61,6 +66,7 @@
         },
         {
             "step": 6,
+            "location": "Getty Ring",
             "title": "The Shed at Ponce City Market",
             "shortDescription": "End your adventure with a meal or drink at The Shed.",
             "hint": "Hint: Find the open-air space offering views of the BeltLine and local vendors.",

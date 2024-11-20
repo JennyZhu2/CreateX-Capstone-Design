@@ -12,6 +12,7 @@
     {
       "step": 1,
       "title": "Art Installation",
+      "location": "Getty Ring",
       "shortDescription": "Visit the famous art installation between two office buildings.",
       "hint": "Look for the sculpture inspired by nature.",
       "coordinates": {
@@ -22,6 +23,7 @@
     {
       "step": 2,
       "title": "Historic Landmark",
+      "location": "Getty Monument",
       "shortDescription": "Discover the landmark building that shaped Midtown's skyline.",
       "hint": "It’s the tallest building in the area.",
       "coordinates": {
@@ -32,6 +34,7 @@
     {
       "step": 3,
       "title": "Local Cafe",
+      "location": "Getty Cafe",
       "shortDescription": "End your hunt with a stop at a local favorite cafe.",
       "hint": "The cafe’s name rhymes with ‘mocha’.",
       "coordinates": {
