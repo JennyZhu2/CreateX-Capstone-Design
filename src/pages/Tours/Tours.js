@@ -33,6 +33,7 @@ function Tours() {
 
   return (
     <div className="home-page">
+      <h1>Available Tours</h1>
       <div className="search-container">
         <input
           type="text"
