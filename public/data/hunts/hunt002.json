@@ -13,7 +13,7 @@
         "step": 1,
         "title": "The Legacy Fountain",
         "shortDescription": "Start your adventure at the iconic Legacy Fountain.",
-        "hint": "Hint: Find the fountain that features colorful water displays during the summer.",
+        "hint": "Find the fountain that features colorful water displays during the summer.",
         "coordinates": {
           "lat": 33.7858,
           "lng": -84.3731
@@ -23,7 +23,7 @@
         "step": 2,
         "title": "The Meadow",
         "shortDescription": "Head to the large open meadow, a popular spot for picnics and events.",
-        "hint": "Hint: Look for the area where people often gather to play frisbee or have a picnic.",
+        "hint": "Look for the area where people often gather to play frisbee or have a picnic.",
         "coordinates": {
           "lat": 33.7845,
           "lng": -84.3709
@@ -33,7 +33,7 @@
         "step": 3,
         "title": "Park Tavern",
         "shortDescription": "Visit the historic Park Tavern located near the edge of the park.",
-        "hint": "Hint: This spot offers great views of the Midtown skyline and is known for its beer garden.",
+        "hint": "This spot offers great views of the Midtown skyline and is known for its beer garden.",
         "coordinates": {
           "lat": 33.7825,
           "lng": -84.3687
@@ -43,7 +43,7 @@
         "step": 4,
         "title": "Lake Clara Meer",
         "shortDescription": "End your hunt with a peaceful walk around Lake Clara Meer.",
-        "hint": "Hint: This lake is a central feature of the park, often surrounded by ducks and geese.",
+        "hint": "This lake is a central feature of the park, often surrounded by ducks and geese.",
         "coordinates": {
           "lat": 33.7816,
           "lng": -84.3742
