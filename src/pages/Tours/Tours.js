@@ -5,6 +5,7 @@ import TourCard from '../../assets/TourCard';
 import './Tours.css';
 
 function Tours() {
+  const [searchTerm, setSearchTerm] = useState("");
   const [tours, setTours] = useState([]);
   const navigate = useNavigate();
 
@@ -20,6 +21,10 @@ function Tours() {
       });
   }, []);
 
+  const searchedTours = tours.filter((tour) =>
+    tour.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   const handleTourClick = (huntId) => {
 
     navigate(`/view/${huntId}`);
@@ -28,10 +33,19 @@ function Tours() {
 
   return (
     <div className="home-page">
-      <h1>All Tours</h1>
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Search tours by name"
+          className="search-bar"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
+
       <div className="tour-grid">
-        {tours.length > 0 ? (
-          tours.map((tour) => (
+        {searchedTours.length > 0 ? (
+          searchedTours.map((tour) => (
             <TourCard
               key={tour.huntId}
               tour={{

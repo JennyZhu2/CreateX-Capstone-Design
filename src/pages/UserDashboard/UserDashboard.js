@@ -5,23 +5,23 @@ import TourCard from "../../assets/TourCard";
 import "./UserDashboard.css";
 
 function UserDashboard() {
-  const [userData, setData] = useState([]); // User data with purchased and created IDs
-  const [purchasedTours, setPurchasedTours] = useState([]); // Data for purchased tours
-  const [createdTours, setCreatedTours] = useState([]); // Data for created tours
+  const [userData, setData] = useState([]);
+  const [purchasedTours, setPurchasedTours] = useState([]);
+  const [createdTours, setCreatedTours] = useState([]);
   const userId = localStorage.getItem("userId");
 
-  // Fetch the user data (purchased and created IDs)
+  // Fetch the user data
   useEffect(() => {
     fetch(`./data/${userId}.json`)
       .then((response) => response.json())
       .then((data) => {
-        setData(data); // Store the user data, which contains purchased and created tour IDs
+        setData(data);
       })
       .catch((error) => {
         console.error('Failed to fetch user001.json:', error);
       });
-  }, []); // Empty dependency array ensures this runs only once after the initial render
-
+  }, []);
+  // Fetch the tour data from index
   useEffect(() => {
     if (userData && userData.purchased && userData.created) {
       fetch('./data/hunts/index.json')
@@ -68,7 +68,6 @@ function UserDashboard() {
           </div>
           <div className="user-info">
             <h2>{userData.name}</h2>
-            <p>Username: {userData.username}</p>
             <p>Email: {userData.email}</p>
           </div>
 

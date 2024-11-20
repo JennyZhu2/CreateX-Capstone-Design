@@ -8,7 +8,6 @@ function Header() {
 
   useEffect(() => {
     const userId = localStorage.getItem("userId");
-    console.log(userId);
     if (userId) {
       setIsSignedIn(true);
     }
