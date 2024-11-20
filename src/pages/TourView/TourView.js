@@ -39,7 +39,7 @@ function TourView() {
 
   return (
     <div className="home-page">
-      <btn onClick={() => navigate(-1)}>Back</btn>
+      <button onClick={() => navigate(-1)} className="back-button">&lt;</button>
       <div className="tour-grid">
         {tours.map((tour) => (
           <div>

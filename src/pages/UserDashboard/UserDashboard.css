@@ -3,6 +3,7 @@
     padding: 20px;
     text-align: center;
     margin-top: 80px;
+    overflow-y: auto; 
   }
   
   .dashboard-header {
@@ -43,6 +44,7 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 50px;
     padding: 10px 0;
+    overflow: visible;
   }
   
   .tour-card {
@@ -54,4 +56,9 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   }
-  
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
