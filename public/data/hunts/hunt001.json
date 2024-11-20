@@ -19,7 +19,11 @@
         "lat": 33.7851,
         "lng": -84.3812
       },
-      "description": "The Getty Ring is more than just a sculpture—it's a testament to Atlanta's commitment to urban art and creative expression. Designed by renowned local artist Maria Hernandez in 2015, this stunning installation represents the interconnectedness of urban life and natural cycles. The massive steel rings, each measuring 15 feet in diameter, are carefully positioned to create an optical illusion that changes depending on the viewer's perspective.\n\nThe sculpture was commissioned as part of Atlanta's 'Art in Public Spaces' initiative, which aims to transform city landscapes into living, breathing galleries. Made from weathering steel that develops a rich, rust-like patina over time, the rings symbolize the continuous growth and transformation of the city. Local historians note that the installation sits precisely where an old textile mill once stood, creating a powerful narrative of industrial heritage transforming into creative innovation.\n\nInterestingly, the Getty Ring has become more than just an art piece—it's a community landmark. Local students often use it as a meeting point, photographers capture its changing colors throughout the day, and urban design students study its innovative use of negative space and environmental integration."
+      "address": "543 Peachtree St NE, Atlanta, GA",
+      "image": "images/getty_ring.jpg",
+      "video": "https://example.com/getty_ring.mp4",
+      "funFact": "The rings align perfectly during the summer solstice, creating a stunning visual spectacle!",
+      "description": "The Getty Ring is more than just a sculpture—it's a testament to Atlanta's commitment to urban art and creative expression. Designed by renowned local artist Maria Hernandez in 2015, this stunning installation represents the interconnectedness of urban life and natural cycles. The massive steel rings, each measuring 15 feet in diameter, are carefully positioned to create an optical illusion that changes depending on the viewer's perspective.\n\n The sculpture was commissioned as part of Atlanta's 'Art in Public Spaces' initiative, which aims to transform city landscapes into living, breathing galleries. Made from weathering steel that develops a rich, rust-like patina over time, the rings symbolize the continuous growth and transformation of the city. Local historians note that the installation sits precisely where an old textile mill once stood, creating a powerful narrative of industrial heritage transforming into creative innovation.\n\nInterestingly, the Getty Ring has become more than just an art piece—it's a community landmark. Local students often use it as a meeting point, photographers capture its changing colors throughout the day, and urban design students study its innovative use of negative space and environmental integration."
     },
     {
       "step": 2,
@@ -31,6 +35,10 @@
         "lat": 33.7865,
         "lng": -84.3828
       },
+      "address": "378 Peachtree St NE, Atlanta, GA",
+      "image": "images/getty_monument.jpg",
+      "video": "https://example.com/getty_monument.mp4",
+      "funFact": "The building's glass façade reflects the sky, changing its appearance throughout the day!",
       "description": "The Getty Monument stands as a towering symbol of Atlanta's architectural ambition and economic resilience. Completed in 1987, this 52-story skyscraper was designed by the legendary architectural firm Skidmore, Owings & Merrill, known for their groundbreaking modernist designs. At the time of its construction, it was the tallest building in Atlanta, representing the city's rapid economic growth during the late 1980s tech and finance boom.\n\nThe building's unique design incorporates a striking glass curtain wall that reflects the sky and surrounding cityscape, creating a dynamic visual effect that changes with weather and time of day. Its architectural significance goes beyond aesthetics—the building was one of the first in the city to incorporate advanced energy-efficient technologies, including a sophisticated solar shading system and water recycling mechanisms that were revolutionary for its time.\n\nBeyond its architectural marvel, the Getty Monument has played a crucial role in Atlanta's corporate landscape. It has housed headquarters for multiple Fortune 500 companies and has been a symbol of the city's transformation from a regional hub to an international business center. The building's lobby features a stunning art installation and public atrium that has become a popular gathering space for both professionals and tourists."
     },
     {
@@ -43,6 +51,10 @@
         "lat": 33.7885,
         "lng": -84.3830
       },
+      "address": "900 Peachtree St NE, Atlanta, GA",
+      "image": "images/getty_cafe.jpg",
+      "video": "https://example.com/getty_cafe.mp4",
+      "funFact": "The cafe features a coffee brew inspired by the founder's Cuban heritage!",
       "description": "Getty Cafe is not just a coffee shop—it's a vibrant cultural crossroads that embodies the spirit of Atlanta's diverse Midtown neighborhood. Founded in 2008 by second-generation Cuban-American entrepreneur Elena Rodriguez, the cafe has become a beloved community institution that goes far beyond serving exceptional coffee.\n\nThe cafe's interior is a carefully curated space that reflects Atlanta's multicultural heritage. Handcrafted tiles from Mexico line one wall, vintage photographs of Atlanta's neighborhoods adorn another, and local artists rotate their work every month, transforming the space into a dynamic gallery. Their coffee is sourced directly from small, sustainable farms in Colombia, Guatemala, and Ethiopia, with each brew telling a story of its origin.\n\nBeyond its culinary offerings, Loca Cafe has become a hub for community engagement. They host weekly language exchange nights, support local musicians through live performances, and provide a meeting space for community organizations. Their 'Coffee with a Cause' program donates a percentage of each month's proceeds to local nonprofits, addressing issues like urban education, environmental sustainability, and immigrant support. What started as a small neighborhood cafe has evolved into a microcosm of Atlanta's progressive, inclusive spirit."
     }
   ]
