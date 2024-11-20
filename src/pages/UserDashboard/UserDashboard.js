@@ -93,7 +93,7 @@ function UserDashboard() {
             <img src={userData.profilePicture} alt="Profile" />
           </div>
           <div className="user-info">
-            <h2>{userData.name}</h2>
+            <h2>Welcome,  {userData.name}!</h2>
             <p>Email: {userData.email}</p>
           </div>
 
