@@ -1,14 +1,40 @@
 // src/pages/UserDashboard/UserDashboard.js
+
+
+import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
+import Footer from '../../assets/Footer';
+import TourCard from '../../assets/TourCard';
+import './UserDashboard.css';
+
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import TourCard from "../../assets/TourCard";
 import "./UserDashboard.css";
+
 
 function UserDashboard() {
   const [userData, setData] = useState([]);
   const [purchasedTours, setPurchasedTours] = useState([]);
   const [createdTours, setCreatedTours] = useState([]);
   const userId = localStorage.getItem("userId");
+
+
+  const userData = {
+    profilePicture: 'https://via.placeholder.com/150',
+    name: 'John Doe',
+    username: 'johndoe123',
+    email: 'johndoe@example.com',
+    purchasedTours: [
+      { ID: 'hunt001', name: 'Midtown Scavenger', imageUrl: 'images/midtown.jpg', shortDescription: 'Explore the hidden gems of Midtown with this exciting scavenger hunt!' },
+      { ID: 'hunt002', name: 'Piedmont Park Explorer', imageUrl: 'images/park.jpg', shortDescription: 'Discover the best spots in Piedmont Park with this exciting scavenger hunt!' },
+      { ID: 'hunt003', name: 'Inman Park Adventure', imageUrl: 'images/inman_park.jpg', shortDescription: 'Explore the charm and history of Inman Park with this engaging scavenger hunt!' },
+    ],
+    favoriteTours: [
+      { ID: 'hunt003', name: 'Inman Park Adventure', imageUrl: 'images/inman_park.jpg', shortDescription: 'Explore the charm and history of Inman Park with this engaging scavenger hunt!' },
+      { ID: 'hunt004', name: 'Downtown Atlanta Discovery', imageUrl: 'images/park.jpg', shortDescription: 'Discover the heart of Atlanta with this exciting downtown scavenger hunt!' },
+    ],
+  };
 
   // Fetch the user data
   useEffect(() => {
@@ -43,9 +69,14 @@ function UserDashboard() {
     }
   }, [userData]);
 
-  // Navigate to the Posting Page
+
+
   const handlePostHunt = () => {
-    navigate("/post");
+    navigate('/post');
+  };
+
+  const handleTourClick = (tourID) => {
+    navigate(`/view_withhunt/${tourID}`);
   };
 
   const handleTourClick = (huntId) => {
@@ -54,7 +85,7 @@ function UserDashboard() {
 
   return (
     <div>
-      <div className="dashboard-container">
+
         <div className="dashboard-header">
           <h1>User Dashboard</h1>
           <button className="post-hunt-button" onClick={handlePostHunt}>
@@ -74,6 +105,15 @@ function UserDashboard() {
           <div className="user-tours">
             <h3>Purchased Tours</h3>
             <div className="tours-list">
+
+              {userData.purchasedTours.map((tour) => (
+                <TourCard
+                  key={tour.ID}
+                  tour={tour}
+                  onClick={() => handleTourClick(tour.ID)}
+                />
+              ))}
+
               {purchasedTours.length > 0 ? (
                 purchasedTours.map((tour) => (
                   <TourCard
@@ -90,10 +130,26 @@ function UserDashboard() {
               ) : (
                 <p>No Purchased Tours</p>
               )}
+
             </div>
           </div>
 
           <div className="user-tours">
+
+            <h3>Favorite Tours</h3>
+            <div className="tours-list">
+              {userData.favoriteTours.map((tour) => (
+                <TourCard
+                  key={tour.ID}
+                  tour={tour}
+                  onClick={() => handleTourClick(tour.ID)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      <Footer />
+
             <h3>Created Tours</h3>
             <div className="tours-list">
               {createdTours.length > 0 ? (
