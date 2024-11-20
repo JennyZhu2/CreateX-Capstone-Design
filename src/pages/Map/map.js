@@ -117,7 +117,7 @@ function MapPage() {
           icon: {
             path: google.maps.SymbolPath.CIRCLE,
             scale: 8,
-            fillColor: "#4285F4", // Blue color similar to Google Maps
+            fillColor: "#4285F4", 
             fillOpacity: 1,
             strokeWeight: 2,
             strokeColor: "#ffffff",
@@ -125,38 +125,35 @@ function MapPage() {
           title: "Your Location",
         });
 
-        // Watch user's location
-        const watchId = navigator.geolocation.watchPosition(
-          (position) => {
-            const pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude,
-            };
-  
-            console.log("Current position:", pos);
-  
-            // Update marker and map position
-            userMarker.setPosition(pos);
-            mapRef.current.setCenter(pos);
-          },
-          (error) => {
-            console.error("Error watching position:", error);
-            handleLocationError(true, mapRef.current.getCenter());
-          },
-          {
-            enableHighAccuracy: true,
-            maximumAge: 0,
-          }
-        );
+        // // Watch user's location
+        // const watchId = navigator.geolocation.watchPosition(
+        //   (position) => {
+        //     const pos = {
+        //       lat: position.coords.latitude,
+        //       lng: position.coords.longitude,
+        //     };  
+        //     // Update marker and map position
+        //     userMarker.setPosition(pos);
+        //     mapRef.current.setCenter(pos);
+        //   },
+        //   (error) => {
+        //     console.error("Error watching position:", error);
+        //     handleLocationError(true, mapRef.current.getCenter());
+        //   },
+        //   {
+        //     enableHighAccuracy: true,
+        //     maximumAge: 0,
+        //   }
+        // );
 
-        // Store watcher to clean up later
-        setLocationWatcher(watchId);
+        // // Store watcher to clean up later
+        // setLocationWatcher(watchId);
 
         // Add Pan to Current Location Button
         const locationButton = document.createElement("button");
-        locationButton.textContent = "Pan to Current Location";
-        locationButton.classList.add("custom-map-control-button");
-        
+        locationButton.textContent = "Current Location";
+        locationButton.classList.add("map-control-button");
+
         // Ensure the map's controls are available
         if (mapRef.current.controls) {
           mapRef.current.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
@@ -170,6 +167,10 @@ function MapPage() {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude,
               };
+              // Update marker and map position
+              userMarker.setPosition(pos);
+              mapRef.current.setCenter(pos);
+              
               mapRef.current.panTo(pos);
             });
           } else {
