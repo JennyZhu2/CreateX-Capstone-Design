@@ -71,170 +71,98 @@ function UserDashboard() {
     navigate(`/view_withhunt/${tourID}`);
   };
 
-<div>
-  <div className="dashboard-header">
-    <h1>User Dashboard</h1>
-    <button className="post-hunt-button" onClick={handlePostHunt}>
-      Post Hunt
-    </button>
-  </div>
 
-  <div className="user-profile">
-    <div className="profile-picture">
-      <img src={userData.profilePicture} alt="Profile" />
-    </div>
-    <div className="user-info">
-      <h2>{userData.name}</h2>
-      <p>Email: {userData.email}</p>
-    </div>
 
-    <div className="user-tours">
-      <h3>Purchased Tours</h3>
-      <div className="tours-list">
-        {userData.purchasedTours.length > 0 ? (
-          userData.purchasedTours.map((tour) => (
-            <TourCard
-              key={tour.ID}
-              tour={tour}
-              onClick={() => handleTourClick(tour.ID)}
-            />
-          ))
-        ) : (
-          <p>No Purchased Tours</p>
-        )}
-      </div>
-    </div>
+  return (
+    <div>
+        <div className="dashboard-header">
+          <h1>User Dashboard</h1>
+          <button className="post-hunt-button" onClick={handlePostHunt}>
+            Post Hunt
+          </button>
+        </div>
 
-    <div className="user-tours">
-      <h3>Favorite Tours</h3>
-      <div className="tours-list">
-        {userData.favoriteTours.length > 0 ? (
-          userData.favoriteTours.map((tour) => (
-            <TourCard
-              key={tour.ID}
-              tour={tour}
-              onClick={() => handleTourClick(tour.ID)}
-            />
-          ))
-        ) : (
-          <p>No Favorite Tours</p>
-        )}
-      </div>
-    </div>
-  </div>
+        <div className="user-profile">
+          <div className="profile-picture">
+            <img src={userData.profilePicture} alt="Profile" />
+          </div>
+          <div className="user-info">
+            <h2>{userData.name}</h2>
+            <p>Email: {userData.email}</p>
+          </div>
 
-  <h3>Created Tours</h3>
-  <div className="tours-list">
-    {createdTours.length > 0 ? (
-      createdTours.map((tour) => (
-        <TourCard
-          key={tour.huntId}
-          tour={{
-            ID: tour.huntId,
-            name: tour.title,
-            shortDescription: tour.shortDescription,
-            imageUrl: tour.image,
-          }}
-          onClick={() => handleTourClick(tour.huntId)}
-        />
-      ))
-    ) : (
-      <p>No Created Tours</p>
-    )}
-  </div>
+          <div className="user-tours">
+            <h3>Purchased Tours</h3>
+            <div className="tours-list">
 
-  <Footer />
-</div>
+              {userData.purchasedTours.map((tour) => (
+                <TourCard
+                  key={tour.ID}
+                  tour={tour}
+                  onClick={() => handleTourClick(tour.ID)}
+                />
+              ))}
 
-  // return (
-  //   <div>
-  //       <div className="dashboard-header">
-  //         <h1>User Dashboard</h1>
-  //         <button className="post-hunt-button" onClick={handlePostHunt}>
-  //           Post Hunt
-  //         </button>
-  //       </div>
+              {purchasedTours.length > 0 ? (
+                purchasedTours.map((tour) => (
+                  <TourCard
+                    key={tour.huntId}
+                    tour={{
+                      ID: tour.huntId,
+                      name: tour.title,
+                      shortDescription: tour.shortDescription,
+                      imageUrl: tour.image,
+                    }}
+                    onClick={() => handleTourClick(tour.huntId)}
+                  />
+                ))
+              ) : (
+                <p>No Purchased Tours</p>
+              )}
 
-  //       <div className="user-profile">
-  //         <div className="profile-picture">
-  //           <img src={userData.profilePicture} alt="Profile" />
-  //         </div>
-  //         <div className="user-info">
-  //           <h2>{userData.name}</h2>
-  //           <p>Email: {userData.email}</p>
-  //         </div>
+            </div>
+          </div>
 
-  //         <div className="user-tours">
-  //           <h3>Purchased Tours</h3>
-  //           <div className="tours-list">
+          <div className="user-tours">
 
-  //             {userData.purchasedTours.map((tour) => (
-  //               <TourCard
-  //                 key={tour.ID}
-  //                 tour={tour}
-  //                 onClick={() => handleTourClick(tour.ID)}
-  //               />
-  //             ))}
+            <h3>Favorite Tours</h3>
+            <div className="tours-list">
+              {userData.favoriteTours.map((tour) => (
+                <TourCard
+                  key={tour.ID}
+                  tour={tour}
+                  onClick={() => handleTourClick(tour.ID)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="user-tours">
+            <h3>Created Tours</h3>
+            <div className="tours-list">
+              {createdTours.length > 0 ? (
+                createdTours.map((tour) => (
+                  <TourCard
+                    key={tour.huntId}
+                    tour={{
+                      ID: tour.huntId,
+                      name: tour.title,
+                      shortDescription: tour.shortDescription,
+                      imageUrl: tour.image,
+                    }}
+                    onClick={() => handleTourClick(tour.huntId)}
+                  />
+                ))
+              ) : (
+                <p>No Created Tours</p>
+              )}
 
-  //             {purchasedTours.length > 0 ? (
-  //               purchasedTours.map((tour) => (
-  //                 <TourCard
-  //                   key={tour.huntId}
-  //                   tour={{
-  //                     ID: tour.huntId,
-  //                     name: tour.title,
-  //                     shortDescription: tour.shortDescription,
-  //                     imageUrl: tour.image,
-  //                   }}
-  //                   onClick={() => handleTourClick(tour.huntId)}
-  //                 />
-  //               ))
-  //             ) : (
-  //               <p>No Purchased Tours</p>
-  //             )}
-
-  //           </div>
-  //         </div>
-
-  //         <div className="user-tours">
-
-  //           <h3>Favorite Tours</h3>
-  //           <div className="tours-list">
-  //             {userData.favoriteTours.map((tour) => (
-  //               <TourCard
-  //                 key={tour.ID}
-  //                 tour={tour}
-  //                 onClick={() => handleTourClick(tour.ID)}
-  //               />
-  //             ))}
-  //           </div>
-  //         </div>
-  //       </div>
-      
-  //       <Footer />
-  //           <h3>Created Tours</h3>
-  //           <div className="tours-list">
-  //             {createdTours.length > 0 ? (
-  //               createdTours.map((tour) => (
-  //                 <TourCard
-  //                   key={tour.huntId}
-  //                   tour={{
-  //                     ID: tour.huntId,
-  //                     name: tour.title,
-  //                     shortDescription: tour.shortDescription,
-  //                     imageUrl: tour.image,
-  //                   }}
-  //                   onClick={() => handleTourClick(tour.huntId)}
-  //                 />
-  //               ))
-  //             ) : (
-  //               <p>No Created Tours</p>
-  //             )}
-  //           </div>
-  //         </div>
+            </div>
+          </div>
+        </div>
         
       
-  // );
+  );
 }
 
 export default UserDashboard;
