@@ -29,12 +29,12 @@ function Login() {
       // Process login (e.g., API call)
       fetch(`/data/userData.json`)
       .then(response =>  response.json())
-      .then(function(userData) {
+        .then(function (userData) {
         const user = userData.find(u => u.username == formData.username && u.password == formData.password);
         if (user) {
           setError("Login successful");
           console.log("Logging in:", formData);
-          localStorage.setItem("username", formData.username);
+          localStorage.setItem("userId", user.userId);
           window.location.href = "Dashboard";
           return;
         } else {

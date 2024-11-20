@@ -7,8 +7,9 @@ function Header() {
   const [isSignedIn, setIsSignedIn] = useState(false);
 
   useEffect(() => {
-    const username = localStorage.getItem("username");
-    if (username) {
+    const userId = localStorage.getItem("userId");
+    console.log(userId);
+    if (userId) {
       setIsSignedIn(true);
     }
   }, []);
@@ -35,7 +36,7 @@ function Header() {
  );
 
  function logOut() {
-  localStorage.removeItem("username");
+  localStorage.removeItem("userId");
   setIsSignedIn(false);
  }
 }

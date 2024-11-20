@@ -1,0 +1,13 @@
+{
+  "name": "John Doe",
+  "email": "jdoe@gmail.com",
+  "profilePicture": "./data/hunts/images/park.jpg",
+  "purchased": [
+    "hunt001",
+    "hunt005",
+    "hunt008"
+  ],
+  "created": [
+
+  ]
+}

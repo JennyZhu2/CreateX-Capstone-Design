@@ -1,24 +1,12 @@
 [
-    {
-        "username": "test",
-        "password": "test",
-        "name": "testing",
-        "email": "testing@testing",
-        "purchasedTours": [
-            "hunt001",
-            "hunt004",
-            "hunt007"
-        ]
-    },
-    {
-        "username": "admin",
-        "password": "admin",
-        "name": "admin",
-        "email": "admin@admin",
-        "purchasedTours": [
-            "hunt002",
-            "hunt003",
-            "hunt009"
-        ]
-    }
+  {
+    "username": "test",
+    "password": "test",
+    "userId": "user001"
+  },
+  {
+    "username": "admin",
+    "password": "admin",
+    "userId": "user002"
+  }
 ]
