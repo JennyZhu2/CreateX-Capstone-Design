@@ -27,7 +27,24 @@ function Login() {
         return;
       }
       // Process login (e.g., API call)
-      console.log("Logging in:", formData);
+      fetch(`/data/userData.json`)
+      .then(response =>  response.json())
+        .then(function (userData) {
+        const user = userData.find(u => u.username == formData.username && u.password == formData.password);
+        if (user) {
+          setError("Login successful");
+          console.log("Logging in:", formData);
+          localStorage.setItem("userId", user.userId);
+          window.location.href = "Dashboard";
+          return;
+        } else {
+          setError("Invalid username or password.");
+          return;
+        }
+      })
+      .catch((error) => {
+        console.error('Failed to fetch index.json:', error);
+      });
     } else {
       if (!formData.username || !formData.email || !formData.password) {
         setError("Please complete all fields.");

@@ -7,8 +7,6 @@ import './TourView.css';
 function TourView() {
   const { tourId } = useParams();
   const [tours, setTours] = useState([]);
-  const [owned, setOwned] = useState(false);
-  const userId = localStorage.getItem("userId");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,22 +33,9 @@ function TourView() {
       });
   }, []);
 
-  useEffect(() => {
-    fetch(`/data/${userId}.json`)
-      .then((response) => response.json())
-      .then((data) => {
-        const isOwned = data.purchased.includes(tourId) || data.created.includes(tourId);
-        setOwned(isOwned);
-      })
-      .catch((error) => {
-        console.error(`Failed to fetch ${userId}.json:`, error);
-      });
-  }, []);
-
-
   const handleStartHunt = (tourId) => {
     navigate(`/map/${tourId}`);
-  }; 
+  };
 
   return (
     <div className="home-page">
@@ -60,22 +45,14 @@ function TourView() {
           <div>
             <h1>{tour.title}</h1>
             <h2>{tour.shortDescription}</h2>
-            <img src={'../data/hunts/' + tour.image} alt={tour.name} className="img"/>
+            <img src={'../data/hunts/' + tour.image} alt={tour.name} className="tour-image" />
             <h3>{tour.fullDescription}</h3>
             <h2>Here are the stops you'll visit along this tour</h2>
             {tour.missions.map((mission) => (
               <h3>{mission.title}</h3>
             ))
             }
-            {owned ? (
-              <>
-                <button className='cta-button' onClick={() => handleStartHunt(tourId)}>Start Tour</button>
-              </>
-            ) : (
-              <>
-                <button className='cta-button' onClick={() => handleStartHunt(tourId)}>Purchase</button>
-              </>
-            )}
+            <btn onClick={() => handleStartHunt(tour.huntId)}>Start Hunt</btn>
           </div>
           ))
         }

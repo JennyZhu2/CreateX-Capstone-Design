@@ -1,0 +1,16 @@
+{
+  "name": "Jane Doe",
+  "email": "jadoe@gmail.com",
+  "profilePicture": "./data/hunts/images/midtown.jpg",
+  "purchased": [
+    "hunt002"
+  ],
+  "favorited": [
+    "hunt002"
+  ],
+  "created": [
+    "hunt004",
+    "hunt008",
+    "hunt009"
+  ]
+}

@@ -4,7 +4,8 @@
     "title": "Midtown Scavenger Hunt",
     "shortDescription": "Explore the hidden gems of Midtown with this exciting scavenger hunt!",
     "image": "images/midtown.jpg",
-    "jsonFile": "hunts/hunt001.json"
+    "jsonFile": "hunts/hunt001.json",
+    "featured": true
   },
   {
     "huntId": "hunt002",
@@ -25,7 +26,8 @@
     "title": "Downtown Atlanta Discovery",
     "shortDescription": "Discover the heart of Atlanta with this exciting downtown scavenger hunt!",
     "image": "images/downtown.jpg",
-    "jsonFile": "hunts/hunt004.json"
+    "jsonFile": "hunts/hunt004.json",
+    "featured": true
   },
   {
     "huntId": "hunt005",
@@ -46,7 +48,8 @@
     "title": "Atlanta Café Crawl",
     "shortDescription": "Discover the best café spots in Atlanta with this delightful scavenger hunt!",
     "image": "images/coffee_atl.jpg",
-    "jsonFile": "hunts/hunt007.json"
+    "jsonFile": "hunts/hunt007.json",
+    "featured": true
   },
   {
     "huntId": "hunt008",

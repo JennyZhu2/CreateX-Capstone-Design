@@ -12,8 +12,9 @@
     {
       "step": 1,
       "title": "Art Installation",
+      "location": "Getty Ring",
       "shortDescription": "Visit the famous art installation between two office buildings.",
-      "hint": "Hint: Look for the sculpture inspired by nature.",
+      "hint": "Look for the sculpture inspired by nature.",
       "coordinates": {
         "lat": 33.7851,
         "lng": -84.3812
@@ -22,8 +23,9 @@
     {
       "step": 2,
       "title": "Historic Landmark",
+      "location": "Getty Monument",
       "shortDescription": "Discover the landmark building that shaped Midtown's skyline.",
-      "hint": "Hint: It’s the tallest building in the area.",
+      "hint": "It’s the tallest building in the area.",
       "coordinates": {
         "lat": 33.7865,
         "lng": -84.3828
@@ -32,10 +34,11 @@
     {
       "step": 3,
       "title": "Local Cafe",
+      "location": "Getty Cafe",
       "shortDescription": "End your hunt with a stop at a local favorite cafe.",
-      "hint": "Hint: The cafe’s name rhymes with ‘mocha’.",
+      "hint": "The cafe’s name rhymes with ‘mocha’.",
       "coordinates": {
-        "lat": 33.7880,
+        "lat": 33.7885,
         "lng": -84.3830
       }
     }
