@@ -10,6 +10,7 @@ function UserDashboard() {
   const [purchasedTours, setPurchasedTours] = useState([]);
   const [createdTours, setCreatedTours] = useState([]);
   const userId = localStorage.getItem("userId");
+  const navigate = useNavigate();
 
 
   const userData = {
