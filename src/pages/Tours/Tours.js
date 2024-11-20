@@ -59,7 +59,7 @@ function Tours() {
             />
           ))
         ) : (
-          <p>Loading tours...</p>
+          <p>No tours matching this search</p>
         )}
       </div>
     </div>

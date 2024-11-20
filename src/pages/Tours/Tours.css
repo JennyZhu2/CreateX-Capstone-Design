@@ -1,15 +1,18 @@
 .home-page {
-    padding: 20px;
-    text-align: center;
-  }
-   h1 {
+  width: auto;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+  .h1 {
     font-size: 2.5rem;
     margin-bottom: 30px;
     color: #000000;
   }
    .tour-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
     gap: 90px; /* Increased gap between the cards */
     margin: 0 auto;
     margin-bottom: 50px;
@@ -25,8 +28,6 @@
     text-align: left;
     transition: transform 0.2s, box-shadow 0.2s;
     height: 300px; /* Set a fixed height for consistency */
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
   }
    .tour-card:hover {
