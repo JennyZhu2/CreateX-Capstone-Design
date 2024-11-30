@@ -1,9 +1,10 @@
 import React from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams, useNavigate } from 'react-router-dom';
 import './mission.css';
 
 function Mission() {
   const location = useLocation();
+  const navigate = useNavigate();
   const { tourId, missionStep } = useParams();
 
   // Mission details passed via navigation state
@@ -20,6 +21,7 @@ function Mission() {
   
   return (
     <div className="mission-container">
+      <button onClick={() => navigate(-1)} className="back-button">&lt;</button>
       <div className="mission-header">
       <img 
       src={`/data/hunts/${mission.image}`} 
