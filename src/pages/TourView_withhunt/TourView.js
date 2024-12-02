@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Link } from "react-router-dom"
-import TourCard from '../../assets/TourCard';
 import './TourView.css';
 
 function TourView() {
@@ -42,20 +40,23 @@ function TourView() {
       <button onClick={() => navigate(-1)} className="back-button">&lt;</button>
       <div className="tour-grid">
         {tours.map((tour) => (
-          <div>
+          <div key={tour.huntId}>
             <h1>{tour.title}</h1>
             <h2>{tour.shortDescription}</h2>
             <img src={'../data/hunts/' + tour.image} alt={tour.name} className="tour-image" />
             <h3>{tour.fullDescription}</h3>
-            <h2>Here are the stops you'll visit along this tour</h2>
+
+            <h2>Price: ${tour.price}</h2>
+
+            <h2>Here are the stops you'll visit along this tour:</h2>
             {tour.missions.map((mission) => (
-              <h3>{mission.title}</h3>
-            ))
-            }
-            <btn onClick={() => handleStartHunt(tour.huntId)}>Start Hunt</btn>
+              <h3 key={mission.step}>{mission.title}</h3>
+            ))}
+            <button onClick={() => handleStartHunt(tour.huntId)} className="start-hunt-button">
+              Start Hunt
+            </button>
           </div>
-          ))
-        }
+        ))}
       </div>
     </div>
   );

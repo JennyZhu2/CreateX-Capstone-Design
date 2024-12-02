@@ -1,6 +1,7 @@
 {
   "huntId": "hunt001",
   "title": "Midtown Scavenger Hunt",
+  "price": "$0.99",
   "shortDescription": "Explore the hidden gems of Midtown with this exciting scavenger hunt!",
   "image": "images/midtown.jpg",
   "fullDescription": "This scavenger hunt takes you through the vibrant Midtown area, highlighting art installations, historic landmarks, and local favorites.",
