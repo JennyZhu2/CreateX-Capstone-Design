@@ -1,0 +1,48 @@
+/* TourView.css */
+
+.reviews-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow reviews to wrap to the next line if they exceed the container width */
+  gap: 20px; /* Space between the reviews */
+  justify-content: center; /* Center the reviews horizontally */
+  align-items: stretch; /* Make all cards the same height */
+}
+
+.review-card {
+  width: 250px; /* Adjust the width of each review card */
+  border: 1px solid #4CAF50; /* Green border to match the theme */
+  background-color: #f4f4f4; /* Light background for the cards */
+  padding: 15px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+  display: flex;
+  flex-direction: column; /* Ensure content is stacked vertically */
+  justify-content: space-between; /* Distribute space between elements */
+}
+
+  .review-card:hover {
+    transform: translateY(-5px); /* Lift the card on hover */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* More intense shadow on hover */
+  }
+
+.review-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center; /* Center the text inside the card */
+  flex-grow: 1; /* Make the text section take up remaining space */
+}
+
+  .review-info h3 {
+    color: #4CAF50; /* Title in green to match the theme */
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .review-info p {
+    font-size: 1em;
+    color: #333; /* Darker text color for readability */
+    line-height: 1.5;
+  }

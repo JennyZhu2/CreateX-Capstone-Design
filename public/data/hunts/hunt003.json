@@ -1,68 +1,85 @@
 {
-    "huntId": "hunt003",
-    "title": "Inman Park Adventure",
-    "shortDescription": "Explore the charm and history of Inman Park with this engaging scavenger hunt!",
-    "image": "images/inman_park.jpg",
-    "fullDescription": "This scavenger hunt will guide you through the historic Inman Park neighborhood, highlighting its stunning architecture, lush parks, and vibrant local spots. Perfect for a fun and educational outing!",
-    "coordinates": {
-        "lat": 33.7597,
-        "lng": -84.3606
+  "huntId": "hunt003",
+  "title": "Inman Park Adventure",
+  "shortDescription": "Explore the charm and history of Inman Park with this engaging scavenger hunt!",
+  "image": "images/inman_park.jpg",
+  "fullDescription": "This scavenger hunt will guide you through the historic Inman Park neighborhood, highlighting its stunning architecture, lush parks, and vibrant local spots. Perfect for a fun and educational outing!",
+  "coordinates": {
+    "lat": 33.7597,
+    "lng": -84.3606
+  },
+  "missions": [
+    {
+      "step": 1,
+      "location": "Getty Barn",
+      "title": "Trolley Barn",
+      "shortDescription": "Start your journey at the historic Trolley Barn.",
+      "hint": "Look for a building that once housed Atlanta's electric streetcars.",
+      "coordinates": {
+        "lat": 33.7587,
+        "lng": -84.3593
+      }
     },
-    "missions": [
-        {
-            "step": 1,
-            "location": "Getty Barn",
-            "title": "Trolley Barn",
-            "shortDescription": "Start your journey at the historic Trolley Barn.",
-            "hint": "Look for a building that once housed Atlanta's electric streetcars.",
-            "coordinates": {
-                "lat": 33.7587,
-                "lng": -84.3593
-            }
-        },
-        {
-            "step": 2,
-            "location": "Getty Garden",
-            "title": "Inman Park Butterfly Garden",
-            "shortDescription": "Visit the enchanting butterfly garden, a symbol of the neighborhood.",
-            "hint": "Find the garden with vibrant flowers and a butterfly sculpture.",
-            "coordinates": {
-                "lat": 33.7590,
-                "lng": -84.3620
-            }
-        },
-        {
-            "step": 3,
-            "location": "Getty Tunnel",
-            "title": "Krog Street Tunnel",
-            "shortDescription": "Head to the iconic Krog Street Tunnel, known for its street art.",
-            "hint": "Look for the colorful tunnel that connects Inman Park to Cabbagetown.",
-            "coordinates": {
-                "lat": 33.7547,
-                "lng": -84.3645
-            }
-        },
-        {
-            "step": 4,
-            "location": "Getty Park",
-            "title": "Springvale Park",
-            "shortDescription": "Take a relaxing break at Springvale Park, a neighborhood gem.",
-            "hint": "This park features a serene pond and plenty of shade from tall trees.",
-            "coordinates": {
-                "lat": 33.7602,
-                "lng": -84.3615
-            }
-        },
-        {
-            "step": 5,
-            "location": "Getty Window",
-            "title": "King of Pops Window",
-            "shortDescription": "Finish your adventure with a treat at the King of Pops Window.",
-            "hint": "Look for a small, colorful stand offering refreshing popsicles.",
-            "coordinates": {
-                "lat": 33.7576,
-                "lng": -84.3558
-            }
-        }
-    ]
+    {
+      "step": 2,
+      "location": "Getty Garden",
+      "title": "Inman Park Butterfly Garden",
+      "shortDescription": "Visit the enchanting butterfly garden, a symbol of the neighborhood.",
+      "hint": "Find the garden with vibrant flowers and a butterfly sculpture.",
+      "coordinates": {
+        "lat": 33.7590,
+        "lng": -84.3620
+      }
+    },
+    {
+      "step": 3,
+      "location": "Getty Tunnel",
+      "title": "Krog Street Tunnel",
+      "shortDescription": "Head to the iconic Krog Street Tunnel, known for its street art.",
+      "hint": "Look for the colorful tunnel that connects Inman Park to Cabbagetown.",
+      "coordinates": {
+        "lat": 33.7547,
+        "lng": -84.3645
+      }
+    },
+    {
+      "step": 4,
+      "location": "Getty Park",
+      "title": "Springvale Park",
+      "shortDescription": "Take a relaxing break at Springvale Park, a neighborhood gem.",
+      "hint": "This park features a serene pond and plenty of shade from tall trees.",
+      "coordinates": {
+        "lat": 33.7602,
+        "lng": -84.3615
+      }
+    },
+    {
+      "step": 5,
+      "location": "Getty Window",
+      "title": "King of Pops Window",
+      "shortDescription": "Finish your adventure with a treat at the King of Pops Window.",
+      "hint": "Look for a small, colorful stand offering refreshing popsicles.",
+      "coordinates": {
+        "lat": 33.7576,
+        "lng": -84.3558
+      }
+    }
+  ],
+  "reviews": [
+    {
+      "rId": 1,
+      "name": "James Doe",
+      "review": "I thought this tour was amazing."
+    },
+    {
+      "rId": 2,
+      "name": "Monica Douglas",
+      "review": "I had a good time exploring Midtown"
+    },
+    {
+      "rId": 3,
+      "name": "Jessica Jones",
+      "review": "I never knew some of these amazing places even existed!"
+    }
+  ]
 }

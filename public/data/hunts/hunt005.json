@@ -1,68 +1,85 @@
 {
-    "huntId": "hunt005",
-    "title": "Buckhead Treasures",
-    "shortDescription": "Explore the upscale charm of Buckhead with this delightful scavenger hunt!",
-    "image": "images/buckhead.jpg",
-    "fullDescription": "Discover the luxury and history of Buckhead, from iconic landmarks to beautiful parks and trendy spots. Perfect for a day of adventure in one of Atlanta’s most vibrant neighborhoods!",
-    "coordinates": {
-        "lat": 33.8490,
-        "lng": -84.3665
+  "huntId": "hunt005",
+  "title": "Buckhead Treasures",
+  "shortDescription": "Explore the upscale charm of Buckhead with this delightful scavenger hunt!",
+  "image": "images/buckhead.jpg",
+  "fullDescription": "Discover the luxury and history of Buckhead, from iconic landmarks to beautiful parks and trendy spots. Perfect for a day of adventure in one of Atlanta’s most vibrant neighborhoods!",
+  "coordinates": {
+    "lat": 33.8490,
+    "lng": -84.3665
+  },
+  "missions": [
+    {
+      "step": 1,
+      "location": "Getty Ring",
+      "title": "The Shops Buckhead Atlanta",
+      "shortDescription": "Begin your journey at The Shops Buckhead Atlanta, a hub of luxury shopping and dining.",
+      "hint": "Look for the area filled with upscale boutiques and designer brands.",
+      "coordinates": {
+        "lat": 33.8378,
+        "lng": -84.3823
+      }
     },
-    "missions": [
-        {
-            "step": 1,
-            "location": "Getty Ring",
-            "title": "The Shops Buckhead Atlanta",
-            "shortDescription": "Begin your journey at The Shops Buckhead Atlanta, a hub of luxury shopping and dining.",
-            "hint": "Look for the area filled with upscale boutiques and designer brands.",
-            "coordinates": {
-                "lat": 33.8378,
-                "lng": -84.3823
-            }
-        },
-        {
-            "step": 2,
-            "location": "Getty Ring",
-            "title": "Atlanta History Center",
-            "shortDescription": "Learn about Atlanta's past at the renowned Atlanta History Center.",
-            "hint": "This spot features the Swan House and beautiful gardens.",
-            "coordinates": {
-                "lat": 33.8418,
-                "lng": -84.3855
-            }
-        },
-        {
-            "step": 3,
-            "location": "Getty Ring",
-            "title": "Chastain Park",
-            "shortDescription": "Take a stroll through Chastain Park, one of Buckhead’s largest green spaces.",
-            "hint": "Look for the park with jogging trails, picnic areas, and an amphitheater.",
-            "coordinates": {
-                "lat": 33.8788,
-                "lng": -84.3964
-            }
-        },
-        {
-            "step": 4,
-            "location": "Getty Ring",
-            "title": "Lenox Square Mall",
-            "shortDescription": "Visit the iconic Lenox Square Mall, a staple of Buckhead shopping.",
-            "hint": "Look for the bustling mall with a mix of high-end and popular stores.",
-            "coordinates": {
-                "lat": 33.8463,
-                "lng": -84.3627
-            }
-        },
-        {
-            "step": 5,
-            "location": "Getty Ring",
-            "title": "Buckhead Diner",
-            "shortDescription": "End your adventure with a meal at the classic Buckhead Diner.",
-            "hint": "This spot is known for its retro vibe and delicious comfort food.",
-            "coordinates": {
-                "lat": 33.8436,
-                "lng": -84.3756
-            }
-        }
-    ]
+    {
+      "step": 2,
+      "location": "Getty Ring",
+      "title": "Atlanta History Center",
+      "shortDescription": "Learn about Atlanta's past at the renowned Atlanta History Center.",
+      "hint": "This spot features the Swan House and beautiful gardens.",
+      "coordinates": {
+        "lat": 33.8418,
+        "lng": -84.3855
+      }
+    },
+    {
+      "step": 3,
+      "location": "Getty Ring",
+      "title": "Chastain Park",
+      "shortDescription": "Take a stroll through Chastain Park, one of Buckhead’s largest green spaces.",
+      "hint": "Look for the park with jogging trails, picnic areas, and an amphitheater.",
+      "coordinates": {
+        "lat": 33.8788,
+        "lng": -84.3964
+      }
+    },
+    {
+      "step": 4,
+      "location": "Getty Ring",
+      "title": "Lenox Square Mall",
+      "shortDescription": "Visit the iconic Lenox Square Mall, a staple of Buckhead shopping.",
+      "hint": "Look for the bustling mall with a mix of high-end and popular stores.",
+      "coordinates": {
+        "lat": 33.8463,
+        "lng": -84.3627
+      }
+    },
+    {
+      "step": 5,
+      "location": "Getty Ring",
+      "title": "Buckhead Diner",
+      "shortDescription": "End your adventure with a meal at the classic Buckhead Diner.",
+      "hint": "This spot is known for its retro vibe and delicious comfort food.",
+      "coordinates": {
+        "lat": 33.8436,
+        "lng": -84.3756
+      }
+    }
+  ],
+  "reviews": [
+    {
+      "rId": 1,
+      "name": "James Doe",
+      "review": "I thought this tour was amazing."
+    },
+    {
+      "rId": 2,
+      "name": "Monica Douglas",
+      "review": "I had a good time exploring Midtown"
+    },
+    {
+      "rId": 3,
+      "name": "Jessica Jones",
+      "review": "I never knew some of these amazing places even existed!"
+    }
+  ]
 }

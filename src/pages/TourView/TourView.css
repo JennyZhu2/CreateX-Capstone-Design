@@ -1,4 +1,4 @@
-.cta-button {
+.cta-button, .posting-button, .submit-review {
   padding: 15px 30px;
   font-size: 18px;
   background-color: #4CAF50;
@@ -13,9 +13,9 @@
   margin-right: auto;
 }
 
-.cta-button:hover {
-  background-color: #45a049;
-}
+  .cta-button:hover, .posting-button:hover, .submit-review:hover {
+    background-color: #45a049;
+  }
 
 .back-button {
   position: absolute; 
@@ -43,3 +43,26 @@ img {
   height: auto;
 }
 
+.review-area {
+  width: 100%;
+  height: 120px;
+  padding: 12px;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  resize: vertical; /* Allow the user to resize the textarea vertically */
+  outline: none; /* Remove default outline */
+}
+
+  .review-area:focus {
+    border-color: #4CAF50; /* Green border on focus */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3); /* Light green glow effect */
+  }
+
+  .review-area::placeholder {
+    color: #888;
+    font-style: italic;
+  }

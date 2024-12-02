@@ -1,68 +1,85 @@
 {
-    "huntId": "hunt006",
-    "title": "Battery Atlanta Adventure",
-    "shortDescription": "Explore the vibrant Battery Atlanta with this exciting scavenger hunt!",
-    "image": "images/battery_park.jpg",
-    "fullDescription": "Discover the best spots in Battery Atlanta, including trendy restaurants, iconic landmarks, and exciting activities. Perfect for a fun-filled day out near Truist Park!",
-    "coordinates": {
-        "lat": 33.8908,
-        "lng": -84.4670
+  "huntId": "hunt006",
+  "title": "Battery Atlanta Adventure",
+  "shortDescription": "Explore the vibrant Battery Atlanta with this exciting scavenger hunt!",
+  "image": "images/battery_park.jpg",
+  "fullDescription": "Discover the best spots in Battery Atlanta, including trendy restaurants, iconic landmarks, and exciting activities. Perfect for a fun-filled day out near Truist Park!",
+  "coordinates": {
+    "lat": 33.8908,
+    "lng": -84.4670
+  },
+  "missions": [
+    {
+      "step": 1,
+      "location": "Getty Ring",
+      "title": "The Coca-Cola Roxy",
+      "shortDescription": "Start your journey at the iconic Coca-Cola Roxy theater.",
+      "hint": "Look for the venue known for hosting concerts and events.",
+      "coordinates": {
+        "lat": 33.8913,
+        "lng": -84.4678
+      }
     },
-    "missions": [
-        {
-            "step": 1,
-            "location": "Getty Ring",
-            "title": "The Coca-Cola Roxy",
-            "shortDescription": "Start your journey at the iconic Coca-Cola Roxy theater.",
-            "hint": "Look for the venue known for hosting concerts and events.",
-            "coordinates": {
-                "lat": 33.8913,
-                "lng": -84.4678
-            }
-        },
-        {
-            "step": 2,
-            "location": "Getty Ring",
-            "title": "Truist Park Plaza",
-            "shortDescription": "Visit the lively plaza outside Truist Park.",
-            "hint": "This spot is bustling with fans during Braves games.",
-            "coordinates": {
-                "lat": 33.8905,
-                "lng": -84.4665
-            }
-        },
-        {
-            "step": 3,
-            "location": "Getty Ring",
-            "title": "Terrapin Taproom",
-            "shortDescription": "Grab a refreshment at Terrapin Taproom.",
-            "hint": "Look for the bar known for its craft beer and tasty bites.",
-            "coordinates": {
-                "lat": 33.8899,
-                "lng": -84.4669
-            }
-        },
-        {
-            "step": 4,
-            "location": "Getty Ring",
-            "title": "The Battery Fountain",
-            "shortDescription": "Take a photo by the beautiful fountain in the heart of the Battery.",
-            "hint": "This fountain lights up beautifully at night.",
-            "coordinates": {
-                "lat": 33.8910,
-                "lng": -84.4672
-            }
-        },
-        {
-            "step": 5,
-            "location": "Getty Ring",
-            "title": "Punch Bowl Social",
-            "shortDescription": "End your hunt with some fun at Punch Bowl Social.",
-            "hint": "Look for the entertainment spot with bowling, arcade games, and great food.",
-            "coordinates": {
-                "lat": 33.8903,
-                "lng": -84.4675
-            }
-        }
-    ]
+    {
+      "step": 2,
+      "location": "Getty Ring",
+      "title": "Truist Park Plaza",
+      "shortDescription": "Visit the lively plaza outside Truist Park.",
+      "hint": "This spot is bustling with fans during Braves games.",
+      "coordinates": {
+        "lat": 33.8905,
+        "lng": -84.4665
+      }
+    },
+    {
+      "step": 3,
+      "location": "Getty Ring",
+      "title": "Terrapin Taproom",
+      "shortDescription": "Grab a refreshment at Terrapin Taproom.",
+      "hint": "Look for the bar known for its craft beer and tasty bites.",
+      "coordinates": {
+        "lat": 33.8899,
+        "lng": -84.4669
+      }
+    },
+    {
+      "step": 4,
+      "location": "Getty Ring",
+      "title": "The Battery Fountain",
+      "shortDescription": "Take a photo by the beautiful fountain in the heart of the Battery.",
+      "hint": "This fountain lights up beautifully at night.",
+      "coordinates": {
+        "lat": 33.8910,
+        "lng": -84.4672
+      }
+    },
+    {
+      "step": 5,
+      "location": "Getty Ring",
+      "title": "Punch Bowl Social",
+      "shortDescription": "End your hunt with some fun at Punch Bowl Social.",
+      "hint": "Look for the entertainment spot with bowling, arcade games, and great food.",
+      "coordinates": {
+        "lat": 33.8903,
+        "lng": -84.4675
+      }
+    }
+  ],
+  "reviews": [
+    {
+      "rId": 1,
+      "name": "James Doe",
+      "review": "I thought this tour was amazing."
+    },
+    {
+      "rId": 2,
+      "name": "Monica Douglas",
+      "review": "I had a good time exploring Midtown"
+    },
+    {
+      "rId": 3,
+      "name": "Jessica Jones",
+      "review": "I never knew some of these amazing places even existed!"
+    }
+  ]
 }
